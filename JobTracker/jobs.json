@@ -1,0 +1,2899 @@
+{
+  "TW26003": {
+    "quote_number": "Q260088",
+    "contractor_name": "Clarence Fehr",
+    "address": "425 Heales Ave. Penticton",
+    "phone": "604-880-4419",
+    "email": "cbudget11@gmail.com",
+    "notes": "MAIN\nLUMBER\nWAITING",
+    "status": "COMPLETE"
+  },
+  "TW26004": {
+    "quote_number": "Q260089",
+    "contractor_name": "Clarence Fehr",
+    "address": "425 Heales Ave. Penticton",
+    "phone": "604-880-4419",
+    "email": "cbudget11@gmail.com",
+    "notes": "CARRIAGE\nLUMBER\n4 PERMIT",
+    "status": "COMPLETE"
+  },
+  "TW26005": {
+    "quote_number": "Q260110",
+    "contractor_name": "Stocker",
+    "address": "13221 Cartwright Ave. Summerland",
+    "phone": "250-490-6358",
+    "email": "stockerconstruction66@gmail.com",
+    "notes": "Need to confirm existing joists/beams.\nFraming out 28th, floors out similar time.",
+    "status": "SOLD",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-07-06T17:32:43.044Z",
+        "text": "Trusses on order"
+      }
+    ]
+  },
+  "TW26006": {
+    "contractor_name": "Scienic View",
+    "address": "168 Hastings Plc. Penticton",
+    "email": "sold@darrellrichards.ca",
+    "status": "SOLD"
+  },
+  "TW26007": {
+    "quote_number": "Q260011",
+    "contractor_name": "Cam Frost",
+    "address": "276 Abbott St. Penticton",
+    "email": "camfrost41@gmail.com",
+    "status": "SOLD",
+    "due_date": "2026-11-02",
+    "quote_sent_date": "2026-08-12",
+    "notes": "Delivery week of Nov 2nd"
+  },
+  "TW26008": {
+    "quote_number": "Q250081",
+    "contractor_name": "John Schalow",
+    "address": "248 Farleigh Rd. Summerland",
+    "phone": "403-803-9170",
+    "email": "innovationrealestate@icloud.com",
+    "status": "COMPLETE"
+  },
+  "TW26009": {
+    "quote_number": "Q260134",
+    "contractor_name": "Mark Holmes",
+    "address": "146 Deerview Crt. Princeton",
+    "phone": "778-708-4193",
+    "email": "holmesrenos@gmail.com",
+    "notes": "MAIN\nMAY",
+    "status": "QUOTE SENT"
+  },
+  "TW26010": {
+    "quote_number": "Q260153",
+    "contractor_name": "Mark Holmes",
+    "address": "146 Deerview Crt. Princeton",
+    "phone": "778-708-4193",
+    "email": "holmesrenos@gmail.com",
+    "due_date": "2026-04-20",
+    "notes": "SHOP\nMAY\nSTUDS",
+    "status": "QUOTE SENT"
+  },
+  "TW26011": {
+    "contractor_name": "Greyledge",
+    "address": "3975 Valleyview Rd. Penticton",
+    "phone": "250-462-1415",
+    "email": "greyledgecustomhomes@gmail.com",
+    "notes": "REV2",
+    "status": "SOLD"
+  },
+  "TW26013": {
+    "quote_number": "Q260148",
+    "contractor_name": "***",
+    "address": "577 Road 2 Oliver",
+    "phone": "250-485-8205",
+    "email": "mannproduce@hotmail.com",
+    "notes": "TRUSS\nLUMBER",
+    "status": "QUOTE SENT"
+  },
+  "TW26014": {
+    "quote_number": "Q260149",
+    "contractor_name": "Martin Buehler",
+    "address": "438 Darcy Mountain Rd. Princeton",
+    "email": "mbuehler@telus.net",
+    "notes": "LUMBER\nWAITING\n4 PERMIT",
+    "status": "QUOTE SENT"
+  },
+  "TW26015": {
+    "quote_number": "Q260154",
+    "contractor_name": "Showtime",
+    "address": "908 Newton Dr. Penticton",
+    "email": "office@showtimehb.com",
+    "notes": "DECK",
+    "status": "QUOTE SENT"
+  },
+  "TW26016": {
+    "contractor_name": "Stelmack",
+    "address": "175 Bighorn Pnt. Osoyoos",
+    "email": "dave.corbett65@gmail.com",
+    "notes": "NO JOISTS",
+    "status": "COMPLETE"
+  },
+  "TW26017": {
+    "quote_number": "Q260157",
+    "address": "1751 Wallis Rd. OK Falls",
+    "phone": "604-726-3451",
+    "email": "jbholbrook9@gmail.com",
+    "notes": "LUMBER",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-06-26T21:13:12.214Z",
+        "text": "Jason was in today, wants snow loading adjusted."
+      },
+      {
+        "ts": "2026-06-26T22:17:17.889Z",
+        "text": "Sent to Jason, mentioned the lumber quote."
+      }
+    ],
+    "quote_sent_date": "2026-06-26"
+  },
+  "TW26018": {
+    "contractor_name": "Greyledge",
+    "address": "657 Johnson Cres. Willowbrook",
+    "phone": "250-462-1415",
+    "email": "greyledgecustomhomes@gmail.com",
+    "status": "QUOTE SENT"
+  },
+  "TW26019": {
+    "quote_number": "Q260172",
+    "contractor_name": "Sankey",
+    "address": "727 Winnipeg St. Penticton",
+    "email": "jordansankey@yahoo.com",
+    "status": "QUOTE SENT"
+  },
+  "TW26020": {
+    "quote_number": "Q260178",
+    "contractor_name": "Arnie",
+    "address": "7811 Highway 97, Oliver",
+    "phone": "604-556-1232",
+    "email": "arnazaroff@gmail.com",
+    "status": "QUOTE SENT"
+  },
+  "TW26021": {
+    "quote_number": "Q260105",
+    "contractor_name": "Renshaw",
+    "address": "903 Newton Dr. Penticton",
+    "email": "curt@renshawcontracting.com",
+    "notes": "- We are not putting in one of the small garage doors. We will remove one and make the other one the bigger one with the other as the opposite side for a drive through idea. \n- We also do not need the 2 windows that Marshal has listed on the North side. And we have an extra window from a mistake that was made at the house. So we till use it.  Can get you the size if you need it.\n- There is an interior wall that we are going to remove all together and have more of an open concept idea. ",
+    "status": "QUOTE SENT",
+    "due_date": "2026-11-24",
+    "quote_sent_date": "2026-11-19"
+  },
+  "TW26022": {
+    "quote_number": "Q260190",
+    "contractor_name": "Glen Aasen",
+    "address": "94 Palmerston Ave. Midway",
+    "phone": "250-449-5025",
+    "email": "glen.aasen@global.komatsu",
+    "status": "QUOTE SENT"
+  },
+  "TW26023": {
+    "quote_number": "Q260204",
+    "contractor_name": "Don Roadglide",
+    "address": "Keremeos",
+    "phone": "250-618-9821",
+    "email": "donroadglide@gmail.com",
+    "notes": "TRUSS\nORDER",
+    "status": "QUOTE SENT"
+  },
+  "TW26024": {
+    "quote_number": "Q260207",
+    "contractor_name": "Stutters",
+    "address": "63 Alexander Ave. Kamloops",
+    "phone": "250-878-2663",
+    "email": "rocky.armstrong@stutters.com",
+    "notes": "TRUSS",
+    "status": "QUOTE SENT"
+  },
+  "TW26025": {
+    "quote_number": "Q260214",
+    "contractor_name": "Greyledge",
+    "address": "126 Eastside Rd. OK Falls",
+    "phone": "250-462-1415",
+    "email": "greyledgecustomhomes@gmail.com",
+    "notes": "TRUSS",
+    "status": "QUOTE SENT"
+  },
+  "TW26028": {
+    "contractor_name": "Landform",
+    "address": "1430 Hillside Ave. Penticton",
+    "phone": "250-486-3605",
+    "email": "sean@landformadb.com",
+    "quote_sent_date": "2026-04-29",
+    "notes": "GLULAMS\nWAITING\n4 LUMBER",
+    "status": "SOLD"
+  },
+  "TW26030": {
+    "contractor_name": "Adept",
+    "address": "2821 Evergreen Dr. Penticton",
+    "email": "adeptcarpentry@zoho.com",
+    "notes": "GLULAMS",
+    "status": "SOLD"
+  },
+  "TW26031": {
+    "contractor_name": "Red Stag",
+    "address": "6451 Chute Lake Rd. Naramata",
+    "phone": "250-488-6743",
+    "email": "joel@redstagcontracting.ca",
+    "status": "SOLD"
+  },
+  "TW26032": {
+    "quote_number": "Q260254",
+    "contractor_name": "360 Projects",
+    "address": "784 Westhills Dr. Penticton",
+    "email": "T360projects@hotmail.com",
+    "notes": "HOUSE\nTRUSSES",
+    "status": "COMPLETE"
+  },
+  "TW26033": {
+    "quote_number": "Q260255",
+    "contractor_name": "360 Projects",
+    "address": "784 Westhills Dr. Penticton",
+    "email": "T360projects@hotmail.com",
+    "notes": "GARAGE\nTRUSSES",
+    "status": "COMPLETE"
+  },
+  "TW26034": {
+    "quote_number": "Q260256",
+    "contractor_name": "Harry",
+    "address": "8508 70th St. Osoyoos",
+    "email": "humble.harry88@gmail.com",
+    "quote_sent_date": "2026-04-01",
+    "status": "QUOTE SENT",
+    "notes": "Not sure what's going on with this job, Mike will find out."
+  },
+  "TW26036": {
+    "quote_number": "Q260259",
+    "contractor_name": "Schoenne",
+    "address": "2820 Evergreen Penticton",
+    "phone": "250-462-1250",
+    "email": "chris@schoenne.com",
+    "quote_sent_date": "2026-08-25",
+    "notes": "WAITING\n4 TRUSS",
+    "status": "QUOTE SENT"
+  },
+  "TW26037": {
+    "quote_number": "Q260257",
+    "contractor_name": "???",
+    "address": "264 Three Sis. Dr. Canmore",
+    "email": "richard.macfarlane@valleyhbc.com",
+    "quote_sent_date": "2026-04-01",
+    "notes": "WAITING\n4 TRUSS",
+    "status": "QUOTE SENT"
+  },
+  "TW26040": {
+    "quote_number": "Q260280",
+    "contractor_name": "Brentview",
+    "address": "149 Upper Bench Rd. Penticton",
+    "email": "steve@brentview.ca",
+    "due_date": "2026-04-09",
+    "notes": "FIXES?",
+    "status": "SOLD",
+    "activity_log": [
+      {
+        "ts": "2026-08-07T15:55:22.647Z",
+        "text": "wait for revisions"
+      },
+      {
+        "ts": "2026-09-11T19:40:01.025Z",
+        "text": "sent layouts for review"
+      }
+    ],
+    "waiting_trusses": false
+  },
+  "TW26041": {
+    "quote_number": "Q250434",
+    "contractor_name": "Gord Lindsey",
+    "address": "2598 Green Mnt Rd. Penticton",
+    "quote_sent_date": "2026-04-06",
+    "notes": "TRUSS",
+    "status": "QUOTE SENT"
+  },
+  "TW26042": {
+    "quote_number": "Q260307",
+    "contractor_name": "Jason Sinclair",
+    "address": "565 Linden Ave. Kaleden",
+    "phone": "604-910-3505",
+    "email": "laxcoachu12@gmail.com",
+    "due_date": "2026-10-19",
+    "quote_sent_date": "2026-10-20",
+    "notes": "FLOOR TRS\nIJOIST",
+    "status": "IN PROGRESS",
+    "waiting_ewp": false,
+    "activity_log": [
+      {
+        "ts": "2026-07-22T14:35:19.066Z",
+        "text": "followed up"
+      },
+      {
+        "ts": "2026-07-31T18:18:14.098Z",
+        "text": "digging 2 weeks"
+      },
+      {
+        "ts": "2026-07-31T18:18:28.360Z",
+        "text": "will want take off for lumber when struc received"
+      },
+      {
+        "ts": "2026-09-08T22:36:49.404Z",
+        "text": "sent for lumber take off"
+      },
+      {
+        "ts": "2026-09-14T20:14:40.377Z",
+        "text": "need to send quotes still"
+      },
+      {
+        "ts": "2026-11-25T16:10:50.697Z",
+        "text": "March?"
+      }
+    ],
+    "waiting_trusses": false
+  },
+  "TW26043": {
+    "quote_number": "Q260285",
+    "contractor_name": "Landform",
+    "address": "166 Fawn Crt. Penticton",
+    "phone": "250-486-3605",
+    "email": "sean@landformadb.com",
+    "due_date": "2026-09-21",
+    "quote_sent_date": "2026-05-21",
+    "notes": "FLR REV2\nTRUSSREV3\n4 WEEKS\nWI0825F - Trusses",
+    "status": "SOLD",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-07-10T15:17:17.528Z",
+        "text": "waiting for truss confirmation"
+      },
+      {
+        "ts": "2026-07-13T16:14:31.507Z",
+        "text": "Order once small changes made, not sure when they want delivery"
+      },
+      {
+        "ts": "2026-07-13T21:46:08.820Z",
+        "text": "trusses mid august"
+      },
+      {
+        "ts": "2026-09-01T21:34:54.907Z",
+        "text": "sept. 18th trusses"
+      }
+    ]
+  },
+  "TW26044": {
+    "quote_number": "Q260286",
+    "contractor_name": "BB Builders",
+    "address": "3845 North Naramata Rd, Naramata",
+    "phone": "604-830-7804",
+    "email": "darren.bbbuilders@telus.net",
+    "quote_sent_date": "2026-04-06",
+    "notes": "TRUSS",
+    "status": "QUOTE SENT"
+  },
+  "TW26045": {
+    "contractor_name": "Scienic View",
+    "phone": "250-488-3900",
+    "email": "sold@darrellrichards.ca",
+    "quote_sent_date": "2026-09-08",
+    "notes": "Steve Hill - Kredence Creek - 250-462-1005",
+    "status": "QUOTE SENT",
+    "address": "2515 McKenzie Ave. Penticton B.C.",
+    "client_name": "Darrell",
+    "due_date": "2026-07-23",
+    "activity_log": [
+      {
+        "ts": "2026-07-14T14:43:57.614Z",
+        "text": "in for revisions"
+      }
+    ],
+    "revision": "2"
+  },
+  "TW26046": {
+    "quote_number": "Q260290",
+    "contractor_name": "Lucas Brown",
+    "address": "5713 Peach Orch. Rd. Summerland",
+    "phone": "250-899-8433",
+    "email": "chilkso@hotmail.com",
+    "due_date": "2026-04-13",
+    "quote_sent_date": "2026-04-06",
+    "notes": "NEED\nLUMBER",
+    "status": "SOLD",
+    "client_name": "Luke Brown"
+  },
+  "TW26047": {
+    "quote_number": "Q260301",
+    "contractor_name": "Volk Homes",
+    "address": "9207 Welsh Ave. Summerland",
+    "phone": "250-801-4335",
+    "email": "volkhomesinc@gmail.com",
+    "due_date": "2026-04-07",
+    "quote_sent_date": "2026-04-20",
+    "notes": "SENT\nFLOOR/TRS\nQUOTE",
+    "status": "QUOTE SENT"
+  },
+  "TW26048": {
+    "quote_number": "17229",
+    "contractor_name": "Stocker",
+    "address": "133 Nelson Ave. Penticton",
+    "email": "stockerconstruction66@gmail.com",
+    "due_date": "2026-11-16",
+    "quote_sent_date": "2026-04-15",
+    "status": "IN PROGRESS",
+    "client_name": "Gary Stocker",
+    "phone": "250-490-6358",
+    "notes": "Needs trusses week of Nov. 16th/23rd\n\nWill sell through Alpha Truss",
+    "waiting_trusses": true
+  },
+  "TW26049": {
+    "quote_number": "Q260305",
+    "contractor_name": "Kaden Kayce",
+    "address": "637 Lakeside Crt. Oliver",
+    "email": "kadenkayce@gmail.com",
+    "due_date": "2026-04-15",
+    "quote_sent_date": "2026-04-15",
+    "notes": "NOT QTD",
+    "status": "QUOTE SENT"
+  },
+  "TW26050": {
+    "quote_number": "Q260304",
+    "contractor_name": "OML Con",
+    "address": "Clear Water County",
+    "email": "richard.macfarlane@valleyhbc.com",
+    "due_date": "2026-04-17",
+    "quote_sent_date": "2026-04-14",
+    "status": "QUOTE SENT"
+  },
+  "TW26051": {
+    "contractor_name": "Crowsnest Reno",
+    "address": "Willowbrook",
+    "phone": "250-869-5567",
+    "email": "crowsnestrenovations@gmail.com",
+    "due_date": "2026-05-08",
+    "quote_sent_date": "2026-04-29",
+    "notes": "METAL RF",
+    "status": "QUOTE SENT"
+  },
+  "TW26052": {
+    "quote_number": "Q260309",
+    "contractor_name": "Greyback",
+    "address": "The Crossing",
+    "due_date": "2026-04-16",
+    "quote_sent_date": "2026-04-16",
+    "status": "QUOTE SENT"
+  },
+  "TW26053": {
+    "quote_number": "Q250296",
+    "contractor_name": "Whitfield",
+    "address": "172 Cambie Plc. Penticton",
+    "email": "chase@whitfieldhomes.ca",
+    "due_date": "2026-09-17",
+    "quote_sent_date": "2026-08-10",
+    "notes": "WAITING\n4 TRUSS\nJason Munns\nKevin McNally - Framing",
+    "status": "SOLD",
+    "activity_log": [
+      {
+        "ts": "2026-06-29T16:43:40.057Z",
+        "text": "Approved layout June 25th"
+      },
+      {
+        "ts": "2026-07-06T16:25:01.680Z",
+        "text": "Sent email asking for timeline"
+      },
+      {
+        "ts": "2026-07-08T22:49:21.085Z",
+        "text": "need delivered ASAP"
+      },
+      {
+        "ts": "2026-07-09T22:05:27.480Z",
+        "text": "delivery 10th"
+      },
+      {
+        "ts": "2026-07-20T20:31:35.849Z",
+        "text": "Trusses August 17th once approved"
+      },
+      {
+        "ts": "2026-08-05T22:11:28.850Z",
+        "text": "need layout approval"
+      }
+    ],
+    "client_name": "Chase",
+    "waiting_ewp": false
+  },
+  "TW26056": {
+    "quote_number": "Q260316",
+    "contractor_name": "Whitfield",
+    "address": "220 Linden Ave Kaleden",
+    "phone": "250-486-3613",
+    "email": "wally@whitfieldhomes.ca",
+    "due_date": "2026-07-23",
+    "quote_sent_date": "2026-07-21",
+    "status": "SOLD",
+    "client_name": "Wally",
+    "notes": "Updated structurals\nNeed confirmation for floor and roof\nNeed floor package second half of July\nTruss Revisions\n\n21 10 10 A1\n15 11 0 B1\n\nTruss",
+    "revision": "2",
+    "activity_log": [
+      {
+        "ts": "2026-06-30T16:43:36.189Z",
+        "text": "Shop drawings recv."
+      },
+      {
+        "ts": "2026-06-30T22:50:09.723Z",
+        "text": "Floor layout approved"
+      },
+      {
+        "ts": "2026-07-02T14:55:21.521Z",
+        "text": "Sent email asking for delivery date for floor"
+      },
+      {
+        "ts": "2026-07-20T17:41:01.001Z",
+        "text": "Updating truss layout"
+      },
+      {
+        "ts": "2026-07-20T22:43:01.687Z",
+        "text": "waiting for order confirmation"
+      }
+    ],
+    "waiting_trusses": false,
+    "waiting_ewp": false
+  },
+  "TW26057": {
+    "quote_number": "Q260317",
+    "contractor_name": "3rd Gen",
+    "address": "3295 Aspen Lane Kelowna",
+    "phone": "250-300-5262",
+    "email": "kelly@3rdgenhomes.com",
+    "due_date": "2026-04-20",
+    "quote_sent_date": "2026-04-17",
+    "status": "QUOTE SENT"
+  },
+  "TW26058": {
+    "quote_number": "Q260320",
+    "contractor_name": "Rubyhill",
+    "address": "110 Mallard St. Osoyoos",
+    "email": "jasvindersinghaujla@yahoo.ca",
+    "due_date": "2026-04-21",
+    "quote_sent_date": "2026-05-12",
+    "status": "SOLD"
+  },
+  "TW26059": {
+    "quote_number": "Q260319",
+    "contractor_name": "Rubyhill",
+    "address": "108 Mallard St. Osoyoos",
+    "email": "jasvindersinghaujla@yahoo.ca",
+    "due_date": "2026-04-21",
+    "quote_sent_date": "2026-04-24",
+    "status": "SOLD"
+  },
+  "TW26061": {
+    "quote_number": "Q260326",
+    "contractor_name": "Parallel 50",
+    "address": "158 Van Horne St. Penticton",
+    "phone": "250-488-6060",
+    "email": "jarrod@par50.com",
+    "due_date": "2026-04-22",
+    "quote_sent_date": "2026-06-01",
+    "status": "COMPLETE",
+    "notes": "started 06/11/26"
+  },
+  "TW26062": {
+    "contractor_name": "Corey's Cont.",
+    "address": "125 Mail Rd. Kelowna",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "due_date": "2026-04-09",
+    "quote_sent_date": "2026-04-09",
+    "status": "QUOTE SENT"
+  },
+  "TW26063": {
+    "contractor_name": "Ritchie",
+    "address": "150 Benchlands Dr. Naramata",
+    "email": "jessica@ritchiecustomhomes.com",
+    "due_date": "2026-09-08",
+    "quote_sent_date": "2026-04-09",
+    "notes": "GLULAMS\nJULY/AUG\nMain floor July 17th",
+    "status": "SOLD",
+    "activity_log": [
+      {
+        "ts": "2026-07-10T15:07:47.730Z",
+        "text": "may push off 17th delivery"
+      },
+      {
+        "ts": "2026-07-15T16:56:57.822Z",
+        "text": "23rd delivery"
+      },
+      {
+        "ts": "2026-08-04T15:23:43.135Z",
+        "text": "Sent V6 for confirmation"
+      }
+    ],
+    "waiting_ewp": false
+  },
+  "TW26064": {
+    "quote_number": "Q260337",
+    "contractor_name": "Hammer",
+    "address": "2424 Charolaise Rd. Lake Country",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "due_date": "2026-04-27",
+    "quote_sent_date": "2026-04-27",
+    "status": "QUOTE SENT"
+  },
+  "TW26065": {
+    "quote_number": "Q260339",
+    "contractor_name": "Schoenne",
+    "address": "1089 Manitoba St. Penticton",
+    "phone": "250-462-1250",
+    "email": "chris@schoenne.com",
+    "due_date": "2026-11-10",
+    "quote_sent_date": "2026-09-03",
+    "status": "SOLD",
+    "waiting_trusses": false
+  },
+  "TW26066": {
+    "quote_number": "Q260338",
+    "contractor_name": "Crux",
+    "address": "Apex",
+    "phone": "250-492-2429",
+    "email": "greg@cruxmechanical.com",
+    "due_date": "2026-07-29",
+    "quote_sent_date": "2026-07-29",
+    "notes": "WALL PNL",
+    "status": "SOLD"
+  },
+  "TW26067": {
+    "contractor_name": "DC Reid",
+    "address": "Osoyoos",
+    "phone": "250-462-4473",
+    "email": "charliereid@live.ca",
+    "due_date": "2026-04-28",
+    "quote_sent_date": "2026-04-14",
+    "status": "QUOTE SENT"
+  },
+  "TW26068": {
+    "contractor_name": "Brody",
+    "address": "Penticton",
+    "email": "windrunnerwoodworks@gmail.com",
+    "due_date": "2026-04-21",
+    "quote_sent_date": "2026-04-29",
+    "notes": "DECKS",
+    "status": "QUOTE SENT"
+  },
+  "TW26069": {
+    "quote_number": "Q260265",
+    "contractor_name": "ARC",
+    "address": "213 Grizzly St. Banff",
+    "email": "richard.macfarlane@valleyhbc.com",
+    "due_date": "2026-04-28",
+    "quote_sent_date": "2026-05-07",
+    "status": "QUOTE SENT"
+  },
+  "TW26070": {
+    "quote_number": "Q260298",
+    "contractor_name": "Charest",
+    "address": "814 4th St. Canmore",
+    "email": "richard.macfarlane@valleyhbc.com",
+    "due_date": "2026-04-28",
+    "status": "QUOTE SENT"
+  },
+  "TW26071": {
+    "quote_number": "Q250299",
+    "contractor_name": "Agave",
+    "address": "745 Westminster Ave W Penticton",
+    "email": "hello@agavehomes.ca",
+    "due_date": "2026-06-22",
+    "quote_sent_date": "2026-04-15",
+    "status": "IN PROGRESS",
+    "notes": "Starting after 195 Village Hts.\n\nNot sure when???",
+    "waiting_trusses": false
+  },
+  "TW26072": {
+    "quote_number": "Q260340",
+    "contractor_name": "David Noga",
+    "address": "11020 Lister Ave Summerland",
+    "phone": "250-469-2071",
+    "email": "info@54drafting.ca",
+    "due_date": "2026-04-29",
+    "quote_sent_date": "2026-04-30",
+    "status": "QUOTE SENT",
+    "notes": "Still waiting for permit"
+  },
+  "TW26054": {
+    "quote_number": "Q260311",
+    "contractor_name": "Trevor Gladish",
+    "address": "Green Mountain Rd. Penticton",
+    "phone": "250-809-9235",
+    "due_date": "2026-05-13",
+    "quote_sent_date": "2026-05-01",
+    "notes": "Extra trusses being made\n\nWill pick up from the store",
+    "status": "SOLD"
+  },
+  "TW26073": {
+    "quote_number": "Q250229",
+    "contractor_name": "Parallel 50",
+    "address": "158 Deer Plc Penticton",
+    "phone": "250-490-6016",
+    "email": "brad@par50.com",
+    "due_date": "2026-04-23",
+    "quote_sent_date": "2026-04-16",
+    "notes": "TRUSS\nFLOOR",
+    "status": "SOLD"
+  },
+  "TW26074": {
+    "contractor_name": "McLean Const.",
+    "address": "164 Chapman",
+    "phone": "250-328-9489",
+    "email": "carlylecontractingltd@gmail.com",
+    "due_date": "2026-05-13",
+    "quote_sent_date": "2026-05-11",
+    "notes": "LVL\nCOLUMNS",
+    "status": "QUOTE SENT"
+  },
+  "TW26075": {
+    "contractor_name": "Tightlines",
+    "address": "240 Benchlands",
+    "phone": "250-462-0574",
+    "email": "mcgilliscontracting.ltd@gmail.com",
+    "due_date": "2026-04-20",
+    "quote_sent_date": "2026-04-24",
+    "notes": "REV",
+    "status": "SOLD"
+  },
+  "TW26076": {
+    "quote_number": "Q260348",
+    "contractor_name": "Wiseworth Hld",
+    "address": "Summerland",
+    "phone": "250-486-4209",
+    "email": "okinkead@shaw.ca",
+    "due_date": "2026-04-30",
+    "quote_sent_date": "2026-04-22",
+    "notes": "TRUSS\nONLY",
+    "status": "QUOTE SENT"
+  },
+  "TW26077": {
+    "contractor_name": "Martin Buehler",
+    "address": "526 Old Hedley Rd. Princeton",
+    "email": "mbuehler@telus.net",
+    "due_date": "2026-05-01",
+    "quote_sent_date": "2026-04-29",
+    "status": "QUOTE SENT"
+  },
+  "TW26002": {
+    "quote_number": "Q260175",
+    "contractor_name": "Gary Greene",
+    "address": "2931 Juniper Dr. Penticton",
+    "email": "camframe@icloud.com",
+    "due_date": "2026-09-14",
+    "quote_sent_date": "2026-07-28",
+    "notes": "FOLLOW UP",
+    "status": "IN PROGRESS",
+    "client_name": "Gary Greene",
+    "waiting_trusses": false,
+    "revision": "5"
+  },
+  "TW26012": {
+    "quote_number": "Q260147",
+    "contractor_name": "Greyledge",
+    "address": "3975 Valleyview Rd. Penticton",
+    "phone": "250-462-1415",
+    "email": "greyledgecustomhomes@gmail.com",
+    "due_date": "2026-05-04",
+    "quote_sent_date": "2026-05-14",
+    "notes": "TRUSS\nHEADERS\nREV2",
+    "status": "SOLD",
+    "waiting_trusses": false
+  },
+  "TW26078": {
+    "quote_number": "Q260349",
+    "contractor_name": "Scienic View",
+    "address": "604 Schneider Rd. Keremeos",
+    "phone": "250-488-3900",
+    "email": "sold@darrellrichards.ca",
+    "due_date": "2026-05-04",
+    "quote_sent_date": "2026-04-22",
+    "status": "QUOTE SENT"
+  },
+  "TW26079": {
+    "contractor_name": "Veritcal C.",
+    "address": "2163 Carmi Rd. Penticton",
+    "email": "verticalcreations@shaw.ca",
+    "due_date": "2026-04-28",
+    "quote_sent_date": "2026-04-29",
+    "status": "QUOTE SENT"
+  },
+  "TW26080": {
+    "contractor_name": "Brian Ehlers",
+    "address": "3142 Eveningstar Close. Oliver",
+    "phone": "250-460-7350",
+    "email": "building@osoyoos.ca",
+    "due_date": "2026-05-05",
+    "quote_sent_date": "2026-05-01",
+    "status": "QUOTE SENT"
+  },
+  "TW26081": {
+    "contractor_name": "Kidner",
+    "address": "424 4th St. Canmore",
+    "email": "richard.macfarlane@valleyhbc.com",
+    "due_date": "2026-04-23",
+    "quote_sent_date": "2026-04-24",
+    "notes": "BEAM RUNS",
+    "status": "QUOTE SENT"
+  },
+  "TW26082": {
+    "contractor_name": "1151068 BC LTD",
+    "address": "150 Flagstone Rise",
+    "phone": "250-212-6454",
+    "email": "kim@onefour2.ca",
+    "due_date": "2026-08-27",
+    "quote_sent_date": "2026-05-05",
+    "status": "SOLD",
+    "quote_number": "Q250163",
+    "waiting_ewp": false,
+    "activity_log": [
+      {
+        "ts": "2026-08-04T22:13:07.555Z",
+        "text": "Change column caps per email"
+      },
+      {
+        "ts": "2026-09-23T22:03:06.879Z",
+        "text": "waiting for updated layout"
+      }
+    ],
+    "waiting_trusses": false
+  },
+  "TW26083": {
+    "contractor_name": "Chase Valley",
+    "address": "4511 Lakeside Rd Penticton",
+    "phone": "250-485-2240",
+    "email": "simon@chasevalley.ca",
+    "due_date": "2026-05-14",
+    "quote_sent_date": "2026-05-21",
+    "status": "SOLD"
+  },
+  "TW26001": {
+    "quote_number": "Q260073",
+    "contractor_name": "Greyledge",
+    "address": "3245 4th St Naramata",
+    "phone": "250-462-1415",
+    "email": "greyledgecustomhomes@gmail.com",
+    "due_date": "2026-05-07",
+    "quote_sent_date": "2026-05-14",
+    "notes": "REV1",
+    "status": "SOLD",
+    "activity_log": [
+      {
+        "ts": "2026-06-29T15:41:31.116Z",
+        "text": "Crawlspace July 10th wait for upper/roof confirmation"
+      },
+      {
+        "ts": "2026-07-21T14:10:20.394Z",
+        "text": "confirm trusses"
+      }
+    ],
+    "waiting_trusses": false
+  },
+  "TW26084": {
+    "quote_number": "Q260363",
+    "contractor_name": "Paul Morrison",
+    "address": "487 Grand Oro Rd. Kaleden",
+    "phone": "250-497-0504",
+    "email": "psfmorrison1956@gmail.com",
+    "due_date": "2026-05-08",
+    "quote_sent_date": "2026-04-30",
+    "status": "SOLD"
+  },
+  "TW26027": {
+    "quote_number": "Q260208",
+    "contractor_name": "Roymar",
+    "address": "6439 Chute Lake Rd. Naramata",
+    "phone": "250-486-1472",
+    "email": "roymarhome@gmail.com",
+    "due_date": "2026-06-22",
+    "quote_sent_date": "2026-04-27",
+    "notes": "TRUSS\nGLULAM - on order\nHEADERS",
+    "status": "SOLD",
+    "client_name": "JP",
+    "activity_log": [
+      {
+        "ts": "2026-06-29T16:37:23.626Z",
+        "text": "Glulam ready for pickup"
+      },
+      {
+        "ts": "2026-06-29T16:49:21.615Z",
+        "text": "texted JP about delivery for headers"
+      },
+      {
+        "ts": "2026-07-13T16:04:34.598Z",
+        "text": "Other glulam ready for pickup"
+      }
+    ],
+    "waiting_trusses": false
+  },
+  "TW26085": {
+    "quote_number": "Q260364",
+    "contractor_name": "T. Blackwell",
+    "address": "251 Eastside Rd. Ok Falls",
+    "phone": "778-319-2141",
+    "email": "trevor@blackwellconstruction.ca",
+    "due_date": "2026-05-08",
+    "quote_sent_date": "2026-05-04",
+    "status": "QUOTE SENT"
+  },
+  "TW26086": {
+    "quote_number": "Q250183",
+    "contractor_name": "Deer Valley",
+    "address": "2751 Hawthorne Dr. Penticton",
+    "phone": "250-498-9622",
+    "email": "carl.buckendahl@gmail.com",
+    "due_date": "2026-05-12",
+    "quote_sent_date": "2026-05-21",
+    "notes": "DECK\nHEADERS\ncove",
+    "status": "SOLD"
+  },
+  "TW26087": {
+    "contractor_name": "Ajmer Singh",
+    "address": "2754 Dartmouth Penticton",
+    "email": "singhajmer@hotmail.com",
+    "quote_sent_date": "2026-04-29",
+    "status": "QUOTE SENT"
+  },
+  "TW26088": {
+    "quote_number": "Q250485",
+    "contractor_name": "RDC",
+    "address": "1737 Duncan Ave E. Penticton",
+    "phone": "250-488-6060",
+    "email": "jarrod@par50.com",
+    "due_date": "2026-04-29",
+    "quote_sent_date": "2026-05-13",
+    "notes": "WILL ORDER",
+    "status": "SOLD"
+  },
+  "TW26089": {
+    "quote_number": "Q260372",
+    "contractor_name": "Mike Grgich",
+    "address": "1059 Hwy 5A Princeton",
+    "phone": "250-295-1024",
+    "email": "mike.mgc@telus.net",
+    "due_date": "2026-05-15",
+    "quote_sent_date": "2026-05-04",
+    "status": "QUOTE SENT"
+  },
+  "TW26090": {
+    "contractor_name": "Eric Cerutti",
+    "address": "121 Grandview Penticton",
+    "phone": "250-462-7886",
+    "due_date": "2026-05-05",
+    "quote_sent_date": "2026-05-06",
+    "status": "SOLD",
+    "waiting_ewp": false
+  },
+  "TW26091": {
+    "contractor_name": "Redline",
+    "address": "PIB Log Building",
+    "phone": "250-212-5541",
+    "email": "derek@redlinecontracting.ca",
+    "due_date": "2026-05-19",
+    "status": "QUOTE SENT"
+  },
+  "TW26092": {
+    "quote_number": "Q260378",
+    "contractor_name": "Schuurman Percy",
+    "address": "985 Moosejaw Penticton",
+    "phone": "250-809-9336",
+    "email": "sbecker21.sb@gmail.com",
+    "due_date": "2026-05-20",
+    "quote_sent_date": "2026-05-12",
+    "status": "QUOTE SENT"
+  },
+  "TW26093": {
+    "quote_number": "Q260379",
+    "contractor_name": "Reno 911",
+    "address": "1875 Ross Rd West Kelowna",
+    "phone": "250-320-8652",
+    "email": "claytonmckenzie758@gmail.com",
+    "due_date": "2026-05-08",
+    "quote_sent_date": "2026-05-08",
+    "status": "QUOTE SENT"
+  },
+  "TW26055": {
+    "quote_number": "Q260314",
+    "contractor_name": "Wine Country",
+    "address": "5532 Oyama Lake Rd. Lake Cntry",
+    "phone": "250-769-0703",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "due_date": "2026-05-20",
+    "quote_sent_date": "2026-04-22",
+    "notes": "DECK JST",
+    "status": "SOLD"
+  },
+  "TW26026": {
+    "quote_number": "Q260220",
+    "contractor_name": "Roymar",
+    "address": "3180 Hayman Rd. Naramata",
+    "phone": "250-486-1472",
+    "email": "roymarhome@gmail.com",
+    "due_date": "2026-05-22",
+    "notes": "TRUSS\nFLOOR",
+    "status": "QUOTE SENT"
+  },
+  "TW26094": {
+    "quote_number": "Q260386",
+    "contractor_name": "Ritchie",
+    "address": "1768 Naramata Rd Penticton",
+    "email": "kelly@ritchiecustomhomes.com",
+    "due_date": "2026-11-30",
+    "quote_sent_date": "2026-10-14",
+    "status": "IN PROGRESS",
+    "client_name": "Kelly Furness",
+    "activity_log": [
+      {
+        "ts": "2026-09-23T17:45:45.322Z",
+        "text": "waiting for IFC plans"
+      }
+    ],
+    "revision": "4",
+    "notes": "1st I-joist - 1st/2nd week Jan\n\nCrawlspace Access\nDrop all showers"
+  },
+  "TW26095": {
+    "quote_number": "Q250065",
+    "contractor_name": "Roymar",
+    "address": "845 Kinney Ave. Penticton",
+    "phone": "250-486-1472",
+    "email": "roymarhome@gmail.com",
+    "due_date": "2026-05-22",
+    "quote_sent_date": "2026-05-26",
+    "status": "IN PROGRESS",
+    "waiting_trusses": true,
+    "activity_log": [
+      {
+        "ts": "2026-09-24T21:36:28.229Z",
+        "text": "Alpha quoting"
+      },
+      {
+        "ts": "2026-11-16T22:46:38.521Z",
+        "text": "need to update quote"
+      }
+    ],
+    "waiting_ewp": false
+  },
+  "TW26096": {
+    "quote_number": "Q260276",
+    "contractor_name": "Hammer",
+    "address": "639 Westside Rd Penticton",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "due_date": "2026-05-20",
+    "quote_sent_date": "2026-05-14",
+    "status": "QUOTE SENT"
+  },
+  "TW26097": {
+    "contractor_name": "Rubyhill",
+    "address": "115 Mallard St. Osoyoos",
+    "email": "jasvindersinghaujla@yahoo.ca",
+    "due_date": "2026-05-27",
+    "quote_sent_date": "2026-05-25",
+    "status": "QUOTE SENT"
+  },
+  "TW26098": {
+    "quote_number": "Q260394",
+    "contractor_name": "Totally Custom",
+    "address": "Lot 32 Muir Rd Fintry",
+    "email": "mbhome72@gmail.com",
+    "due_date": "2026-05-19",
+    "quote_sent_date": "2026-05-22",
+    "status": "QUOTE SENT"
+  },
+  "TW26099": {
+    "contractor_name": "Roymar",
+    "address": "765 Robinson Ave Naramata",
+    "email": "wseddonjohnstone@gmail.com",
+    "due_date": "2026-05-19",
+    "quote_sent_date": "2026-05-20",
+    "status": "QUOTE SENT"
+  },
+  "TW26035": {
+    "quote_number": "Q250232",
+    "contractor_name": "Wildstone",
+    "address": "177 Clearview Cres. Apex",
+    "phone": "204-218-0920",
+    "email": "HPendree@wildstone.com",
+    "quote_sent_date": "2026-03-27",
+    "notes": "Apr 20th\n\nTrusses July 2nd",
+    "status": "SOLD"
+  },
+  "TW26038": {
+    "quote_number": "Q260258",
+    "contractor_name": "Dexeco",
+    "address": "109-3331 Evergreen Penticton",
+    "phone": "306-461-8756",
+    "email": "williams.homebuild26@gmail.com",
+    "quote_sent_date": "2026-06-05",
+    "notes": "Sent for review",
+    "status": "IN PROGRESS",
+    "client_name": "Ashtyn Williams",
+    "waiting_ewp": true,
+    "activity_log": [
+      {
+        "ts": "2026-07-22T14:36:42.272Z",
+        "text": "followed up"
+      }
+    ]
+  },
+  "TW26029": {
+    "quote_number": "Q260240",
+    "contractor_name": "H&M Excavating",
+    "address": "133-610 Pineview Rd. LOT 21 Pen.",
+    "email": "hmexc@telus.net",
+    "due_date": "2026-06-04",
+    "quote_sent_date": "2026-08-25",
+    "notes": "Looking for a builder\nUsing old plans before revision.\nStarting in a few months",
+    "status": "IN PROGRESS",
+    "activity_log": [
+      {
+        "ts": "2026-08-21T19:16:23.659Z",
+        "text": "sent updated floor quote, still need to send the truss quote"
+      }
+    ]
+  },
+  "TW26039": {
+    "quote_number": "Q260274",
+    "contractor_name": "Agave",
+    "address": "195 Village Heights Plc Pent.",
+    "email": "hello@agavehomes.ca",
+    "due_date": "2026-08-27",
+    "quote_sent_date": "2026-05-25",
+    "status": "SOLD",
+    "notes": "July 6th estimate for 1st floor delivery.\n\nRoof drains?",
+    "revision": "6",
+    "waiting_ewp": false,
+    "activity_log": [
+      {
+        "ts": "2026-06-26T18:15:01.904Z",
+        "text": "Waiting for confirmation on first floor"
+      },
+      {
+        "ts": "2026-06-26T21:12:38.062Z",
+        "text": "Lower floor confirmed, scheduled for July 10th"
+      },
+      {
+        "ts": "2026-07-07T16:46:40.597Z",
+        "text": "Talked with Alan, July 10th is good. Confirm draining on roof system"
+      },
+      {
+        "ts": "2026-07-13T21:45:57.370Z",
+        "text": "Sent email asking for floors to be confirmed"
+      },
+      {
+        "ts": "2026-09-10T14:06:06.976Z",
+        "text": "waiting for trevor to approve"
+      },
+      {
+        "ts": "2026-09-16T15:51:28.807Z",
+        "text": "J01 trusses should be shortened by 3/4”"
+      }
+    ],
+    "waiting_trusses": false
+  },
+  "TW26100": {
+    "quote_number": "Q260402",
+    "contractor_name": "Parallel 50",
+    "address": "Lot 1 Gwendoline Ave Naramata",
+    "phone": "250-328-4965",
+    "email": "cam@par50.com",
+    "due_date": "2026-06-16",
+    "status": "SOLD",
+    "quote_sent_date": "2026-06-26",
+    "notes": "Working on truss option for attic space\n\nQ260431 - option for attic\n\nMake sure the layout shows 1/2 ply not OSB",
+    "activity_log": [
+      {
+        "ts": "2026-06-26T21:36:12.277Z",
+        "text": "Sent 2 truss option quotes"
+      }
+    ]
+  },
+  "TW26101": {
+    "quote_number": "Q250073",
+    "contractor_name": "Harjinder Jandu",
+    "address": "2700 Workman Plc Naramata",
+    "email": "jinder343@gmail.com",
+    "due_date": "2026-07-23",
+    "quote_sent_date": "2026-05-22",
+    "status": "SOLD",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-07-28T22:49:00.885Z",
+        "text": "need confirmation for trusses"
+      }
+    ]
+  },
+  "TW26102": {
+    "contractor_name": "Deer Valley",
+    "address": "856 School Ave Oliver",
+    "phone": "250-498-9622",
+    "email": "carl.buckendahl@gmail.com",
+    "due_date": "2026-05-29",
+    "quote_sent_date": "2026-05-26",
+    "status": "SOLD",
+    "activity_log": [
+      {
+        "ts": "2026-06-26T21:35:59.142Z",
+        "text": "Emailed Carl for an update"
+      }
+    ]
+  },
+  "TW26103": {
+    "contractor_name": "Stocker",
+    "address": "3935 Valleyview Rd. Penticton",
+    "email": "stockerconstruction66@gmail.com",
+    "due_date": "2026-06-08",
+    "status": "QUOTE SENT"
+  },
+  "TW26104": {
+    "contractor_name": "Jay Nemechek",
+    "address": "209 Cedar Ave Kaleden",
+    "email": "lakeshorecontractors@gmail.com",
+    "due_date": "2026-05-25",
+    "quote_sent_date": "2026-05-25",
+    "notes": "QUOTE\nLUMBER",
+    "status": "SOLD",
+    "phone": "250-462-3759"
+  },
+  "TW26105": {
+    "contractor_name": "Rick Fry",
+    "address": "2405 Sparton Dr Penticton",
+    "phone": "604-724-5518",
+    "email": "builtrite@telus.net",
+    "due_date": "2026-06-05",
+    "quote_sent_date": "2026-05-28",
+    "status": "QUOTE SENT"
+  },
+  "TW26106": {
+    "contractor_name": "Kenton Gilchrist",
+    "due_date": "2026-06-10",
+    "quote_sent_date": "2026-06-01",
+    "status": "SOLD",
+    "notes": "Order glulams, paying in Osoyoos, may pick up there\n930457-00",
+    "client_name": "Kenton",
+    "phone": "778-928-7848",
+    "address": "7203 Wren Dr. Osoyoos, B.C."
+  },
+  "TW26107": {
+    "quote_number": "Q260407",
+    "contractor_name": "Wildstone",
+    "address": "Pelly Crossing Yukon",
+    "email": "kgraumann@wildstone.com",
+    "due_date": "2026-06-11",
+    "quote_sent_date": "2026-06-03",
+    "notes": "SFD",
+    "status": "QUOTE SENT"
+  },
+  "TW26108": {
+    "quote_number": "Q250459",
+    "contractor_name": "Beaux",
+    "address": "175 Eastside Rd Penticton",
+    "email": "brody@beauxhomedesign.com",
+    "due_date": "2026-09-15",
+    "quote_sent_date": "2026-06-03",
+    "status": "SOLD",
+    "activity_log": [
+      {
+        "ts": "2026-07-15T16:42:56.799Z",
+        "text": "needs glulams"
+      },
+      {
+        "ts": "2026-07-15T21:19:37.867Z",
+        "text": "5/12' 4/10' glulam post"
+      },
+      {
+        "ts": "2026-07-16T14:59:58.355Z",
+        "text": "Glulams on order"
+      },
+      {
+        "ts": "2026-08-17T20:26:49.141Z",
+        "text": "will confirm trusses today"
+      },
+      {
+        "ts": "2026-08-19T14:18:50.204Z",
+        "text": "2-3 weeks for glulams?"
+      },
+      {
+        "ts": "2026-08-24T21:58:51.291Z",
+        "text": "trusses sept. 15th"
+      }
+    ],
+    "waiting_ewp": false,
+    "waiting_trusses": false,
+    "notes": "Trusses Sept. 15th"
+  },
+  "TW26109": {
+    "quote_number": "Q260408",
+    "contractor_name": "Jandu",
+    "address": "3255 Evergreen Dr Penticton",
+    "email": "jinder343@gmail.com",
+    "due_date": "2026-06-10",
+    "quote_sent_date": "2026-06-04",
+    "notes": "Sent for review/permit",
+    "status": "QUOTE SENT"
+  },
+  "TW26110": {
+    "quote_number": "Q260403",
+    "contractor_name": "Wine Country",
+    "address": "420 Collett Rd Kelowna",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "due_date": "2026-06-02",
+    "quote_sent_date": "2026-06-01",
+    "status": "QUOTE SENT"
+  },
+  "TW26111": {
+    "quote_number": "Q250221",
+    "contractor_name": "Burrows Holding",
+    "address": "240 Caribou Cres. Osoyoos B.C.",
+    "due_date": "2026-09-22",
+    "notes": "Update truss layout\nJuly 13th floor system",
+    "status": "SOLD",
+    "client_name": "Jim",
+    "phone": "250-883-2851",
+    "email": "seajaybc@telus.net",
+    "quote_sent_date": "2026-06-15",
+    "waiting_ewp": false,
+    "activity_log": [
+      {
+        "ts": "2026-06-26T18:19:21.027Z",
+        "text": "Waiting for confirmation on floor"
+      },
+      {
+        "ts": "2026-06-26T22:10:20.055Z",
+        "text": "1st floor reserved, July 13th delivery"
+      },
+      {
+        "ts": "2026-07-02T14:51:13.932Z",
+        "text": "Sent email about truss confirmation"
+      },
+      {
+        "ts": "2026-07-07T18:23:16.879Z",
+        "text": "Trusses in September"
+      },
+      {
+        "ts": "2026-08-25T18:14:00.571Z",
+        "text": "week of 21st"
+      }
+    ]
+  },
+  "TW26112": {
+    "contractor_name": "Terry Bowen",
+    "address": "Penticton",
+    "phone": "250-809-4852",
+    "due_date": "2026-06-04",
+    "notes": "Truss",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-06-05"
+  },
+  "TW26113": {
+    "status": "SOLD",
+    "quote_sent_date": "2026-06-06",
+    "revision": "1",
+    "quote_number": "Q260411",
+    "contractor_name": "Okanagan Custom Homes",
+    "address": "690 Lakeside Penticton B.C.",
+    "client_name": "Joe W",
+    "phone": "250-809-9519",
+    "email": "joew@okanagancustomhomes.com",
+    "waiting_trusses": false,
+    "notes": "LVL - WI0825B gone.\nHANGER - WI0825C gone.\nFLOOR - WI0825D gone.\nTRUSSES - WI0825E",
+    "activity_log": [
+      {
+        "ts": "2026-08-18T21:09:43.167Z",
+        "text": "send layouts for review"
+      }
+    ],
+    "due_date": "2026-10-06"
+  },
+  "TW26060": {
+    "status": "SOLD",
+    "contractor_name": "Ron Unger",
+    "address": "190 Pin Cushion Trail Keremeos, B.C.",
+    "client_name": "Ron Unger",
+    "phone": "604-836-6650",
+    "quote_number": "Q260100",
+    "email": "ronjunger@gmail.com",
+    "quote_sent_date": "2026-05-07",
+    "notes": "Crawlspace July 13th\nUpper Early ~Nov 12th\nRoof Truss Week of Nov 23rd or 1st week of Dec.",
+    "activity_log": [
+      {
+        "ts": "2026-07-02T15:42:45.022Z",
+        "text": "Called, asked about delivery date (will confirm) asked about poly/eps (will confirm)"
+      },
+      {
+        "ts": "2026-07-07T18:23:44.096Z",
+        "text": "Wants delivery July 20th"
+      },
+      {
+        "ts": "2026-08-18T16:52:03.564Z",
+        "text": "main floor oct 1st"
+      },
+      {
+        "ts": "2026-09-18T16:00:10.507Z",
+        "text": "will give 2 week noitce"
+      }
+    ],
+    "due_date": "2026-11-12",
+    "waiting_trusses": false
+  },
+  "TW26115": {
+    "status": "SOLD",
+    "notes": "Wait for confirmation.\nAugust 3rd Trusses",
+    "revision": "3",
+    "contractor_name": "Doug Halverson",
+    "address": "4th Ave. OK Falls B.C.",
+    "email": "doughgod@live.ca",
+    "quote_number": "Q260291",
+    "quote_sent_date": "2026-06-11"
+  },
+  "TW26114": {
+    "status": "SOLD",
+    "quote_number": "Q250472",
+    "contractor_name": "Schoenne",
+    "address": "150 McKeen Plc. Penticton B.C.",
+    "client_name": "Chris Schoenne",
+    "phone": "250-462-1250",
+    "email": "chris@schoenne.com",
+    "due_date": "2026-07-23",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-07-20T17:41:12.067Z",
+        "text": "Need to update floor to new stuc."
+      },
+      {
+        "ts": "2026-08-13T15:28:11.160Z",
+        "text": "confirming truss measurments then ordering."
+      }
+    ],
+    "quote_sent_date": "2026-07-21"
+  },
+  "TW26116": {
+    "due_date": "2026-06-16",
+    "status": "SOLD",
+    "quote_number": "Q250406",
+    "contractor_name": "Brentview",
+    "address": "544 Scott Ave. Penticton B.C.",
+    "client_name": "Luke B",
+    "phone": "250-809-7204",
+    "email": "luke@brentview.ca",
+    "quote_value": "9853.86",
+    "notes": "Trusses June 16th",
+    "activity_log": [
+      {
+        "ts": "2026-06-29T15:59:18.355Z",
+        "text": "Changed layout, moved joist for flange."
+      }
+    ]
+  },
+  "TW26117": {
+    "due_date": "2026-06-24",
+    "status": "QUOTE SENT"
+  },
+  "TW26118": {
+    "due_date": "2026-06-24",
+    "quote_number": "Q260268",
+    "address": "10549 Ok Centre Rd. Kelowna, B.C.",
+    "client_name": "Wayne",
+    "phone": "250-860-5662",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "status": "QUOTE SENT",
+    "contractor_name": "Gibson",
+    "quote_sent_date": "2026-06-11"
+  },
+  "TW26119": {
+    "due_date": "2026-06-29",
+    "status": "QUOTE SENT",
+    "contractor_name": "Showtime",
+    "address": "266 Windsor Ave. Penticton, B.C.",
+    "quote_sent_date": "2026-06-15",
+    "client_name": "Sunny",
+    "phone": "604-787-5204",
+    "email": "office@showtimehb.com",
+    "quote_value": "892.19"
+  },
+  "TW26120": {
+    "due_date": "2026-06-30",
+    "contractor_name": "Jandu",
+    "address": "2700 Workman Plc Naramata",
+    "status": "QUOTE SENT",
+    "email": "jinder343@gmail.com",
+    "quote_number": "Q260447",
+    "notes": "Just need truss quote, maybe headers?",
+    "quote_sent_date": "2026-06-26"
+  },
+  "TW26121": {
+    "status": "QUOTE SENT",
+    "contractor_name": "B.Fair",
+    "address": "9567 Robson Crescent",
+    "due_date": "2026-07-01",
+    "client_name": "Braydon",
+    "phone": "250-488-7739",
+    "email": "bfair@bfairbuilds.com",
+    "quote_sent_date": "2026-07-02",
+    "quote_number": "Q260452"
+  },
+  "TW26122": {
+    "due_date": "2026-07-17",
+    "contractor_name": "Wildstone",
+    "address": "596 Fifth Avenue, Dawson City",
+    "client_name": "Ben",
+    "phone": "778-229-6441 ",
+    "email": "bsteinberg@wildstone.com",
+    "status": "QUOTE SENT",
+    "notes": "Likely would start next spring, still out for tender.\n941405-00 - quote#\nEWPMULTI\n",
+    "activity_log": [
+      {
+        "ts": "2026-07-08T22:50:16.488Z",
+        "text": "need to send quote still"
+      }
+    ],
+    "quote_sent_date": "2026-07-10"
+  },
+  "TW26123": {
+    "due_date": "2026-07-02",
+    "status": "QUOTE SENT",
+    "quote_number": "Q250465",
+    "contractor_name": "Dan Donohae",
+    "address": "7171 Chute Lake Rd. Naramata",
+    "client_name": "Dan",
+    "phone": "250-488-8925",
+    "email": "d.donohoe@hotmail.com",
+    "notes": "sea can trusses\n\nroofing quote",
+    "quote_sent_date": "2026-06-25",
+    "activity_log": [
+      {
+        "ts": "2026-06-29T14:53:47.366Z",
+        "text": "Will get back in a few weeks"
+      },
+      {
+        "ts": "2026-07-20T22:47:17.005Z",
+        "text": "Followed up in email"
+      }
+    ]
+  },
+  "TW26124": {
+    "due_date": "2026-07-07",
+    "contractor_name": "KSP",
+    "address": "1764 Duncan Ave East. Penticton, B.C.",
+    "client_name": "Kai Saunders",
+    "phone": "250-258-2642",
+    "email": "kai.kspbuilders@gmail.com",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-06-23",
+    "quote_number": "Q260430"
+  },
+  "TW26125": {
+    "due_date": "2026-07-08",
+    "contractor_name": "Brentview",
+    "address": "102 Roy Ave. Penticton, B.C.",
+    "client_name": "Steve Carson",
+    "phone": "250-809-7921",
+    "email": "steve@brentview.ca",
+    "quote_number": "SEE NOTES",
+    "notes": "Q260461 - BLD A Duplex Recieved\nQ260462 - BLD B Fourplex",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-06-26T18:11:56.785Z",
+        "text": "Steve is finding out about ledger on BLD A"
+      }
+    ],
+    "quote_sent_date": "2026-07-06"
+  },
+  "TW26126": {
+    "due_date": "2026-07-13",
+    "status": "QUOTE SENT",
+    "contractor_name": "Greyledge",
+    "address": "295 Linden Ave. Kaleden, B.C.",
+    "quote_sent_date": "2026-06-29",
+    "client_name": "Greyledge"
+  },
+  "TW26127": {
+    "due_date": "2026-07-13",
+    "status": "COMPLETE"
+  },
+  "TW26128": {
+    "due_date": "2026-07-13",
+    "status": "SOLD",
+    "contractor_name": "Greyback",
+    "address": "Skaha Hills Lot 434",
+    "client_name": "Kim Upton",
+    "phone": "778-476-8024",
+    "email": "kupton@greyback.com",
+    "quote_sent_date": "2026-06-30",
+    "quote_number": "NO TRUSS",
+    "activity_log": [
+      {
+        "ts": "2026-06-30T21:37:22.783Z",
+        "text": "Glulams confirmed"
+      },
+      {
+        "ts": "2026-07-02T15:35:18.301Z",
+        "text": "Glulams on order 2-3 week lead time"
+      },
+      {
+        "ts": "2026-07-13T16:04:45.095Z",
+        "text": "Glulam ready"
+      },
+      {
+        "ts": "2026-08-04T15:12:10.833Z",
+        "text": "week of 17th"
+      }
+    ],
+    "waiting_ewp": false
+  },
+  "TW26129": {
+    "due_date": "2026-07-16",
+    "contractor_name": "T. Blackwell",
+    "client_name": "Trevor",
+    "phone": "778-319-2141",
+    "email": "trevor@blackwellconstruction.ca",
+    "address": "2255 Naramata Rd. Naramata B.C.",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-03"
+  },
+  "TW26130": {
+    "due_date": "2026-07-20",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-06",
+    "activity_log": [
+      {
+        "ts": "2026-07-06T16:25:22.015Z",
+        "text": "Sent quote, with package pricing. will wait for response"
+      }
+    ],
+    "contractor_name": "Novacom",
+    "client_name": "Jeff Morgan",
+    "phone": "604-424-9046",
+    "email": "jeff@novacom.ca",
+    "address": "Eckhardt McDonalds",
+    "notes": "Start framing early August"
+  },
+  "TW26131": {
+    "due_date": "2026-07-20",
+    "contractor_name": "Volk Homes",
+    "client_name": "Jake Volk",
+    "phone": "250-801-4335",
+    "email": "volkhomesinc@gmail.com",
+    "address": "17812 Garnett Valley Rd. Summerland B.C.",
+    "waiting_trusses": false,
+    "notes": "Have not got Q# yet",
+    "status": "QUOTE SENT",
+    "quote_number": "Q260480",
+    "quote_sent_date": "2026-07-08"
+  },
+  "TW26132": {
+    "due_date": "2026-08-12",
+    "contractor_name": "Scuka",
+    "address": "995 Eckhardt Avenue, Penticton",
+    "client_name": "Miha Merlak",
+    "phone": "250-859-5681",
+    "email": "miha.merlak@scuka.ca",
+    "notes": "NO GST\n18% EWP\n22% Simpson\n10% Trusses",
+    "status": "QUOTE SENT",
+    "quote_number": "Q260483",
+    "waiting_trusses": false,
+    "waiting_ewp": false,
+    "quote_sent_date": "2026-08-12"
+  },
+  "TW26133": {
+    "due_date": "2026-07-21",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-07",
+    "contractor_name": "Ritchie",
+    "client_name": "Mat",
+    "phone": "250-718-6450",
+    "email": "mat@ritchiecustomhomes.com",
+    "quote_number": "Q250215",
+    "address": "758 Sheep Creek, Kaleden B.C."
+  },
+  "TW26134": {
+    "due_date": "2026-07-21",
+    "contractor_name": "Stocker",
+    "client_name": "Gary Stocker",
+    "phone": "250-490-6358",
+    "email": "stockerconstruction66@gmail.com",
+    "status": "SOLD",
+    "activity_log": [
+      {
+        "ts": "2026-07-07T17:07:03.953Z",
+        "text": "Waiting for glulam quote"
+      },
+      {
+        "ts": "2026-07-08T22:50:05.807Z",
+        "text": "need simpson quote"
+      },
+      {
+        "ts": "2026-09-17T20:09:05.859Z",
+        "text": "on order"
+      }
+    ],
+    "notes": "Need to quote Simpson connections\n2 end caps 2 middle ",
+    "waiting_ewp": false
+  },
+  "TW26135": {
+    "due_date": "2026-07-22",
+    "status": "QUOTE SENT",
+    "contractor_name": "EM-T Homes",
+    "address": "412 Bennett, Penticton, B.C.",
+    "client_name": "Brad",
+    "phone": "250-490-6016",
+    "email": "emthomes1@gmail.com",
+    "waiting_trusses": false,
+    "quote_number": "Q260485",
+    "quote_sent_date": "2026-07-21",
+    "activity_log": [
+      {
+        "ts": "2026-07-21T16:28:20.246Z",
+        "text": "make flush beam dropped"
+      }
+    ]
+  },
+  "TW26136": {
+    "due_date": "2026-07-22",
+    "contractor_name": "KELOWNA",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-08",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com"
+  },
+  "TW26137": {
+    "due_date": "2026-07-22",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-08"
+  },
+  "TW26138": {
+    "due_date": "2026-07-22",
+    "contractor_name": "Greyback",
+    "client_name": "James Hill",
+    "phone": "250-493-7972",
+    "email": "jhill@greyback.com",
+    "activity_log": [
+      {
+        "ts": "2026-07-08T22:49:47.466Z",
+        "text": "need pricing for EWP still"
+      }
+    ],
+    "status": "QUOTE SENT",
+    "waiting_ewp": false,
+    "quote_sent_date": "2026-07-13"
+  },
+  "TW26139": {
+    "due_date": "2026-07-23",
+    "contractor_name": "Authentech",
+    "address": "Lot #49 Hidden Hills",
+    "client_name": "Kurt",
+    "phone": "250-491-7690",
+    "email": "kurt@authentechhomes.com",
+    "waiting_trusses": false,
+    "status": "QUOTE SENT",
+    "quote_number": "Q260487",
+    "quote_sent_date": "2026-07-15"
+  },
+  "TW26140": {
+    "due_date": "2026-09-24",
+    "contractor_name": "Rafal",
+    "client_name": "Rafal",
+    "phone": "778-587-8077",
+    "email": "rzydowicz@gmail.com",
+    "activity_log": [
+      {
+        "ts": "2026-07-10T15:51:43.761Z",
+        "text": "emailed mark from bailey for product inquiry"
+      },
+      {
+        "ts": "2026-07-14T14:43:49.191Z",
+        "text": "emailed mark again"
+      },
+      {
+        "ts": "2026-09-10T21:57:50.000Z",
+        "text": "Alpha quoting"
+      }
+    ],
+    "status": "QUOTE SENT",
+    "address": "Lot 13, Racette Way, OK Falls, B.C.",
+    "waiting_trusses": false,
+    "notes": "800S162-54\n$5033.22/MF\n\n800T200-54\n$5246.53/MF",
+    "quote_sent_date": "2026-09-16"
+  },
+  "TW26141": {
+    "due_date": "2026-07-24",
+    "address": "4620 Stewart Rd. E Kelowna, B.C.",
+    "contractor_name": "KELOWNA",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "waiting_trusses": false,
+    "status": "QUOTE SENT",
+    "quote_number": "Q260489",
+    "quote_sent_date": "2026-07-17"
+  },
+  "TW26142": {
+    "due_date": "2026-07-24",
+    "address": "245 Drysdale Blvd. Kelowna, B.C.",
+    "contractor_name": "KELOWNA",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-13"
+  },
+  "TW26143": {
+    "due_date": "2026-07-27",
+    "waiting_ewp": false,
+    "status": "QUOTE SENT"
+  },
+  "TW26144": {
+    "due_date": "2026-07-23",
+    "contractor_name": "KELOWNA",
+    "address": "7867 Alpine Rd. Kelowna B.C.",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-20"
+  },
+  "TW26145": {
+    "due_date": "2026-07-28",
+    "contractor_name": "Parallel 50",
+    "address": "30 Eastview Rd. Twin Lakes, B.C.",
+    "client_name": "Cam Gunning",
+    "phone": "250-328-4965",
+    "email": "cam@par50.com",
+    "status": "QUOTE SENT",
+    "quote_number": "Q260494",
+    "waiting_trusses": false,
+    "quote_sent_date": "2026-07-22"
+  },
+  "TW26146": {
+    "due_date": "2026-07-28",
+    "contractor_name": "Koldyk Contracting",
+    "address": "6110 MACDONALD STREET, SUMMERLAND BC",
+    "client_name": "Ty Koldyk",
+    "phone": "250-487-8196",
+    "email": "koldykcontracting@gmail.com",
+    "status": "IN PROGRESS",
+    "waiting_trusses": false,
+    "quote_number": "Q260498",
+    "notes": "Wait for struc",
+    "activity_log": [
+      {
+        "ts": "2026-08-17T15:44:46.914Z",
+        "text": "asked if he has structurals"
+      }
+    ]
+  },
+  "TW26147": {
+    "due_date": "2026-07-28",
+    "contractor_name": "Koldyk Contracting",
+    "address": "1156 Davenport Ave. Penticton, B.C.",
+    "client_name": "Ty Koldyk",
+    "phone": "250-487-8196",
+    "email": "koldykcontracting@gmail.com",
+    "status": "QUOTE SENT",
+    "quote_number": "Q260508",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-07-22T14:44:51.615Z",
+        "text": "asked about crawlspace"
+      }
+    ],
+    "quote_sent_date": "2026-07-27"
+  },
+  "TW26148": {
+    "created_date": "2026-07-16",
+    "due_date": "2026-07-30",
+    "contractor_name": "KELOWNA",
+    "address": "1519 Sweet Grass ",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "status": "QUOTE SENT",
+    "notes": "1.5\" concrete topping",
+    "quote_sent_date": "2026-07-23"
+  },
+  "TW26149": {
+    "created_date": "2026-07-16",
+    "due_date": "2026-07-30",
+    "contractor_name": "KELOWNA",
+    "address": "Lot #100 Hidden Hills, Kelowna, B.C.",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "quote_sent_date": "2026-07-23"
+  },
+  "TW26150": {
+    "created_date": "2026-07-16",
+    "due_date": "2026-07-30",
+    "quote_number": "17240",
+    "contractor_name": "0796333 BC LTD",
+    "address": "150 Bennett Ave, Penticton B.C.",
+    "email": "jinder343@gmail.com",
+    "status": "IN PROGRESS",
+    "client_name": "Harjinder",
+    "activity_log": [
+      {
+        "ts": "2026-09-25T22:10:05.793Z",
+        "text": "del quoting wall panels"
+      },
+      {
+        "ts": "2026-09-30T21:07:36.343Z",
+        "text": "wall panels need to be quoted"
+      }
+    ]
+  },
+  "TW26151": {
+    "created_date": "2026-07-17",
+    "due_date": "2026-07-31",
+    "contractor_name": "Okanagan Custom Homes",
+    "client_name": "Joe W",
+    "phone": "250-809-9519",
+    "email": "joew@okanagancustomhomes.com",
+    "address": "146 Stevens Cres. Penticton, B.C.",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "quote_number": "Q260512",
+    "activity_log": [
+      {
+        "ts": "2026-07-30T21:33:50.194Z",
+        "text": "Still waiting for trusses"
+      }
+    ],
+    "quote_sent_date": "2026-07-31"
+  },
+  "TW26152": {
+    "created_date": "2026-07-17",
+    "due_date": "2026-07-31",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-17"
+  },
+  "TW26153": {
+    "created_date": "2026-07-17",
+    "due_date": "2026-08-07",
+    "status": "QUOTE SENT",
+    "contractor_name": "Steve Ost",
+    "address": "2622 West Bench Dr. Penticton, B.C.",
+    "client_name": "Steve",
+    "phone": "250-462-2237",
+    "email": "Info.ostcontracting@gmail.com",
+    "waiting_trusses": false,
+    "quote_number": "Q260511",
+    "activity_log": [
+      {
+        "ts": "2026-07-30T21:33:39.879Z",
+        "text": "Still wating for trusses"
+      }
+    ],
+    "quote_sent_date": "2026-08-18"
+  },
+  "TW26154": {
+    "created_date": "2026-07-17",
+    "due_date": "2026-07-29",
+    "contractor_name": "KELOWNA",
+    "address": "Lot #14 Havencrest, Predator Ridge",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-30"
+  },
+  "TW26155": {
+    "created_date": "2026-07-20",
+    "due_date": "2026-07-23",
+    "contractor_name": "KELOWNA",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-22"
+  },
+  "TW26156": {
+    "created_date": "2026-07-21",
+    "due_date": "2026-08-14",
+    "contractor_name": "Parallel 50",
+    "address": "511 Wade Ave E Penticton B.C.",
+    "client_name": "Jarrod",
+    "phone": "250-488-6060",
+    "status": "IN PROGRESS",
+    "waiting_trusses": false,
+    "quote_number": "Q260510",
+    "activity_log": [
+      {
+        "ts": "2026-08-04T14:59:00.549Z",
+        "text": "Waiting for trusses"
+      }
+    ],
+    "quote_sent_date": "2026-08-14"
+  },
+  "TW26157": {
+    "created_date": "2026-07-23",
+    "due_date": "2026-11-18",
+    "contractor_name": "KELOWNA",
+    "address": "505 Happy Valley Rd. Big White, B.C.",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "notes": "Floor, Roof, Glulams\n\nDave - 250-718-9799",
+    "status": "IN PROGRESS",
+    "quote_sent_date": "2026-08-04"
+  },
+  "TW26158": {
+    "created_date": "2026-07-27",
+    "due_date": "2026-08-10",
+    "contractor_name": "KELOWNA",
+    "address": "Lot 7 Cabernet Way West Kelowna, B.C.",
+    "client_name": "Wayne",
+    "email": "wayne.deleurme@kelownahhbc.com",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-07-30"
+  },
+  "TW26159": {
+    "created_date": "2026-07-28",
+    "due_date": "2026-08-27",
+    "contractor_name": "Scott Bowland",
+    "address": "1773 Green Lake Rd",
+    "client_name": "Scott",
+    "email": "bowland.s@icloud.com",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "quote_number": "Q260518",
+    "quote_sent_date": "2026-08-19"
+  },
+  "TW26160": {
+    "created_date": "2026-07-29",
+    "due_date": "2026-08-12",
+    "contractor_name": "Greyledge",
+    "address": "259 Alder Ave. Kaleden, B.C.",
+    "phone": "250-462-1415",
+    "email": "greyledgecustomhomes@gmail.com",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "quote_number": "Q260521",
+    "activity_log": [
+      {
+        "ts": "2026-08-17T20:29:45.110Z",
+        "text": "Truss quote rec."
+      },
+      {
+        "ts": "2026-08-17T20:29:51.183Z",
+        "text": "Need floor quote still"
+      }
+    ],
+    "quote_sent_date": "2026-08-21"
+  },
+  "TW26161": {
+    "created_date": "2026-08-04",
+    "due_date": "2026-08-18",
+    "status": "QUOTE SENT",
+    "contractor_name": "Greg Deuschle",
+    "address": "1490 Balfour St. Penticton, B.C.",
+    "client_name": "Greg Deuschle",
+    "phone": "250-490-5188",
+    "email": "gregdeu@gmail.com",
+    "waiting_trusses": false,
+    "quote_number": "Q260526",
+    "quote_sent_date": "2026-08-21"
+  },
+  "TW26162": {
+    "created_date": "2026-08-05",
+    "due_date": "2026-08-19",
+    "status": "QUOTE SENT",
+    "contractor_name": "DC Reid",
+    "address": "Apex Strayhorse",
+    "phone": "250-462-4473",
+    "email": "charliereid@live.ca",
+    "quote_sent_date": "2026-08-10"
+  },
+  "TW26163": {
+    "created_date": "2026-08-05",
+    "due_date": "2026-08-19",
+    "waiting_trusses": false,
+    "status": "QUOTE SENT",
+    "quote_number": "Q260529",
+    "quote_sent_date": "2026-08-05"
+  },
+  "TW26164": {
+    "created_date": "2026-08-10",
+    "due_date": "2026-08-27",
+    "status": "QUOTE SENT",
+    "contractor_name": "David Leung",
+    "address": "1290 Bullmoose Way Osoyoos, B.C.",
+    "client_name": "David",
+    "phone": "403-899-8511",
+    "quote_sent_date": "2026-08-26",
+    "quote_number": "Q250324",
+    "notes": "Quoting wall panels\n\nQ260547 - Wall panels",
+    "waiting_trusses": false,
+    "waiting_ewp": false,
+    "email": "dleung@ucalgary.ca",
+    "activity_log": [
+      {
+        "ts": "2026-09-01T20:45:50.775Z",
+        "text": "structural steel studs 2x6"
+      }
+    ]
+  },
+  "TW26165": {
+    "created_date": "2026-08-12",
+    "due_date": "2026-08-31",
+    "quote_number": "Q250325",
+    "contractor_name": "Kal Singh",
+    "address": "1812 Quebec St. Penticton B.C.",
+    "client_name": "Kal",
+    "phone": "236-995-1800",
+    "email": "pathan6@yahoo.com",
+    "notes": "622424 invoice for deposit - take off of total EWP cost\nwaiting for structural drawings\n\nsend in for take-off",
+    "status": "QUOTE SENT",
+    "activity_log": [
+      {
+        "ts": "2026-08-17T20:30:36.408Z",
+        "text": "sent for take off"
+      }
+    ],
+    "waiting_ewp": false
+  },
+  "TW26166": {
+    "created_date": "2026-08-13",
+    "due_date": "2026-08-27",
+    "contractor_name": "McLean Const.",
+    "address": "3623 Cypress Hill Dr. Osoyoos, B.C.",
+    "client_name": "Len",
+    "phone": "250-689-0220",
+    "email": "len@mcleanconstruction.ca",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-08-20"
+  },
+  "TW26167": {
+    "created_date": "2026-08-17",
+    "due_date": "2026-08-31",
+    "status": "COMPLETE"
+  },
+  "TW26168": {
+    "created_date": "2026-08-17",
+    "due_date": "2026-09-11",
+    "status": "SOLD",
+    "contractor_name": "Wayne O'Bee",
+    "address": "138 Secrest Ave. Penticton, B.C.",
+    "client_name": "Wayne",
+    "quote_number": "Q260649",
+    "waiting_trusses": false,
+    "phone": "250-490-7295",
+    "quote_sent_date": "2026-08-24",
+    "activity_log": [
+      {
+        "ts": "2026-09-08T17:01:58.947Z",
+        "text": "updating truss layout"
+      },
+      {
+        "ts": "2026-09-16T18:14:19.946Z",
+        "text": "on order"
+      }
+    ],
+    "notes": "Adding covered area, need extra trusses.\n\nQ260558 Old trusses"
+  },
+  "TW26169": {
+    "created_date": "2026-08-18",
+    "due_date": "2026-09-01",
+    "status": "SOLD",
+    "quote_number": "Q260561",
+    "contractor_name": "Allen",
+    "address": "Savona, B.C.",
+    "client_name": "Allen",
+    "waiting_trusses": false,
+    "quote_sent_date": "2026-08-20",
+    "activity_log": [
+      {
+        "ts": "2026-08-25T22:46:55.647Z",
+        "text": "Delivery Sept. 17th"
+      }
+    ]
+  },
+  "TW26170": {
+    "created_date": "2026-08-20",
+    "due_date": "2026-09-03",
+    "status": "QUOTE SENT",
+    "contractor_name": "Jeewan B",
+    "address": "359 Miller Rd. Oliver, B.C.",
+    "quote_sent_date": "2026-08-20",
+    "client_name": "Jeewan"
+  },
+  "TW26171": {
+    "created_date": "2026-08-25",
+    "due_date": "2026-09-04",
+    "contractor_name": "Barnett Construction",
+    "address": "2839 Arawana Plc. Naramata, B.C.",
+    "client_name": "Matt",
+    "phone": "250-486-3823",
+    "status": "IN PROGRESS",
+    "email": "matt@barnettconstruction.ca",
+    "notes": "Roof joists changed to 14\"",
+    "waiting_trusses": false,
+    "quote_number": "Q260578",
+    "activity_log": [
+      {
+        "ts": "2026-08-27T22:02:07.988Z",
+        "text": "Sent EWP quote"
+      }
+    ],
+    "quote_sent_date": "2026-08-31"
+  },
+  "TW26172": {
+    "created_date": "2026-08-25",
+    "due_date": "2026-09-08",
+    "status": "QUOTE SENT",
+    "quote_number": "Q260574",
+    "address": "OK Falls",
+    "waiting_trusses": false,
+    "notes": "Wall panels (Q260576) and trusses (Q260574)",
+    "quote_sent_date": "2026-08-31"
+  },
+  "TW26173": {
+    "created_date": "2026-08-25",
+    "due_date": "2026-09-08",
+    "status": "IN PROGRESS",
+    "contractor_name": "B.Fair",
+    "address": "Keremeos, B.C.",
+    "client_name": "Braydon",
+    "phone": "250-488-7739",
+    "email": "bfair@bfairbuilds.com",
+    "activity_log": [
+      {
+        "ts": "2026-08-26T22:16:53.729Z",
+        "text": "Will re-visit"
+      }
+    ]
+  },
+  "TW26174": {
+    "created_date": "2026-08-26",
+    "due_date": "2026-09-22",
+    "status": "SOLD",
+    "contractor_name": "Jeff Gagnon",
+    "address": "1302 Cedar St. Ok Falls, B.C.",
+    "client_name": "Jeff",
+    "phone": "250-770-1585",
+    "email": "jpmdraftinganddesign.ca",
+    "quote_sent_date": "2026-09-10"
+  },
+  "TW26175": {
+    "created_date": "2026-08-27",
+    "due_date": "2026-09-10",
+    "status": "QUOTE SENT",
+    "contractor_name": "Steve Elhafi",
+    "address": "3716 Luxmoore Rd. Kelowna, B.C.",
+    "client_name": "Steve",
+    "phone": "250-878-2965",
+    "email": "steveelhafi@gmail.com",
+    "waiting_trusses": false,
+    "quote_number": "Q260579",
+    "quote_sent_date": "2026-09-01"
+  },
+  "TW26176": {
+    "created_date": "2026-08-27",
+    "due_date": "2026-11-13",
+    "contractor_name": "Excursion Homes",
+    "address": "153 Lower Bench Rd. Penticton, B.C.",
+    "client_name": "Sean",
+    "email": "excursionhomes@gmail.com",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "quote_number": "Q260581",
+    "quote_sent_date": "2026-08-31"
+  },
+  "TW26177": {
+    "created_date": "2026-08-31",
+    "due_date": "2026-09-10",
+    "status": "QUOTE SENT",
+    "contractor_name": "Vili Der",
+    "address": "14011 81st St. Osoyoos, B.C.",
+    "client_name": "Vili Der",
+    "phone": "604-808-5807",
+    "email": "vili.der49@gmail.com",
+    "notes": "    ---1080LinFt 11 7/8\" TJI  ( please quote 9 1/2\" as well if 15'3\" span allows it)If open web is available please quote\n  ----851 LinFt 9 1/2\" TJI\n  ---- 18Ft 5.5 \" Parallam suitable for load , will be exposed ( quote microlam as well\n ----- 38 ft 5.5\" Parallam for the ridge beam whatever section will carry 10\" SIP roof with 2x4 crossstraped and second layer of 1/2\" plywood\n------ 5 x 8ft x 5.5\"x5.5\" Parallam posts\n------ suitable visible mass timber style post to beam connector hardware\nEngineering to BC specifications",
+    "quote_sent_date": "2026-09-10",
+    "activity_log": [
+      {
+        "ts": "2026-09-03T21:06:50.208Z",
+        "text": "Design I-joist roofs"
+      }
+    ]
+  },
+  "TW26178": {
+    "created_date": "2026-08-31",
+    "due_date": "2026-09-14",
+    "status": "QUOTE SENT",
+    "contractor_name": "Schoenne",
+    "address": "799 Toronto Ave. Penticton, B.C.",
+    "client_name": "Chris Schoenne",
+    "phone": "250-462-1250",
+    "email": "chris@schoenne.com",
+    "notes": "Q260584- Duplex Building A\nQ260585- Duplex Building B\nAlphaTruss Quoting",
+    "waiting_trusses": false,
+    "quote_sent_date": "2026-09-02"
+  },
+  "TW26179": {
+    "created_date": "2026-09-01",
+    "due_date": "2026-09-15",
+    "status": "QUOTE SENT",
+    "contractor_name": "Parallel 50",
+    "address": "158 Deer Plc. Penticton, B.C.",
+    "client_name": "Cam Gunning",
+    "phone": "250-328-4965",
+    "email": "cam@par50.com",
+    "quote_number": "Q260589",
+    "notes": "AlphaTruss Quoting\nEWPMULTI",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-09-08T17:03:59.043Z",
+        "text": "floor layout done, need truss layout and quote"
+      },
+      {
+        "ts": "2026-09-08T20:49:52.352Z",
+        "text": "pbs done"
+      }
+    ],
+    "quote_sent_date": "2026-09-09"
+  },
+  "TW26180": {
+    "created_date": "2026-09-08",
+    "due_date": "2026-10-30",
+    "status": "IN PROGRESS",
+    "contractor_name": "Okanagan Custom Homes",
+    "address": "17830 Matsu Drive Summerland, B.C.",
+    "client_name": "Joe W",
+    "phone": "250-809-9519",
+    "email": "joew@okanagancustomhomes.com",
+    "quote_number": "Q260639",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-09-11T22:29:07.544Z",
+        "text": "Floor done, waiting for truss quote"
+      },
+      {
+        "ts": "2026-10-27T17:56:31.211Z",
+        "text": "sent REV2 for EOR review"
+      },
+      {
+        "ts": "2026-11-16T17:37:15.335Z",
+        "text": "revising layout for visability"
+      }
+    ],
+    "quote_sent_date": "2026-09-16"
+  },
+  "TW26181": {
+    "created_date": "2026-09-09",
+    "due_date": "2026-11-02",
+    "status": "SOLD",
+    "contractor_name": "Veritcal C.",
+    "address": "1201 Gawne Rd. Naramata, B.C.",
+    "client_name": "Mike Collins",
+    "email": "verticalcreations@shaw.ca",
+    "waiting_trusses": false,
+    "quote_number": "Q260663",
+    "quote_sent_date": "2026-09-21",
+    "waiting_ewp": false
+  },
+  "TW26182": {
+    "created_date": "2026-09-10",
+    "due_date": "2026-09-24",
+    "status": "QUOTE SENT",
+    "contractor_name": "Renshaw",
+    "address": "154 Enowkin Trail, Penticton, B.C.",
+    "client_name": "Curt",
+    "phone": "250-462-2114",
+    "email": "curt@renshawcontracting.com",
+    "notes": "Wood truss",
+    "waiting_trusses": false,
+    "quote_sent_date": "2026-09-14"
+  },
+  "TW26183": {
+    "created_date": "2026-09-11",
+    "due_date": "2026-09-25",
+    "status": "QUOTE SENT",
+    "contractor_name": "Blackhawk Contracting",
+    "address": "4785 Lakeside Rd, Penticton, B.C.",
+    "client_name": "Eric",
+    "phone": "250-462-2430",
+    "email": "eric@blackhawkcontracting.ca",
+    "notes": "Alpha quoting\nQ260611 - Roof received\nQ260612 - Floor",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-09-14T14:36:14.396Z",
+        "text": "ewp quoted"
+      }
+    ],
+    "quote_sent_date": "2026-09-23"
+  },
+  "TW26184": {
+    "created_date": "2026-09-15",
+    "due_date": "2026-09-18",
+    "status": "QUOTE SENT",
+    "contractor_name": "Dave Eckes",
+    "address": "Main St. OK Falls, B.C.",
+    "client_name": "Dave",
+    "phone": "250-490-6728",
+    "quote_sent_date": "2026-09-16"
+  },
+  "TW26185": {
+    "created_date": "2026-09-15",
+    "due_date": "2026-09-29",
+    "status": "QUOTE SENT"
+  },
+  "TW26186": {
+    "created_date": "2026-09-17",
+    "due_date": "2026-11-30",
+    "status": "IN PROGRESS",
+    "contractor_name": "Greyback",
+    "address": "Skaha Hills LOT 424",
+    "client_name": "Kim Upton",
+    "phone": "778-476-8024",
+    "email": "kupton@greyback.com",
+    "quote_number": "NO TRUSS",
+    "activity_log": [
+      {
+        "ts": "2026-09-17T22:29:39.575Z",
+        "text": "EWP Quote done, need glulam quote"
+      },
+      {
+        "ts": "2026-09-22T14:17:16.012Z",
+        "text": "EWP Approved"
+      }
+    ],
+    "quote_sent_date": "2026-09-22"
+  },
+  "TW26187": {
+    "created_date": "2026-09-18",
+    "due_date": "2026-10-02",
+    "status": "SOLD",
+    "quote_number": "Q250520",
+    "contractor_name": "Stutters",
+    "address": "1692 Atkinson St. Penticton, B.C.",
+    "client_name": "Rocky",
+    "phone": "250-878-2663",
+    "email": "rocky.armstrong@stutters.com",
+    "notes": "Header",
+    "quote_sent_date": "2026-09-18"
+  },
+  "TW26188": {
+    "created_date": "2026-09-22",
+    "due_date": "2026-11-13",
+    "status": "QUOTE SENT",
+    "contractor_name": "Parallel 50",
+    "address": "649 Burne Ave. Kelowna, B.C.",
+    "client_name": "Cam Gunning",
+    "phone": "250-328-4965",
+    "email": "cam@par50.com",
+    "quote_number": "SEE NOTES",
+    "waiting_trusses": false,
+    "quote_sent_date": "2026-11-19",
+    "notes": "Q260637 - Building A\n17230 - Building B",
+    "activity_log": []
+  },
+  "TW26189": {
+    "created_date": "2026-09-23",
+    "due_date": "2026-10-15",
+    "status": "IN PROGRESS",
+    "quote_number": "Q250092",
+    "contractor_name": "Tightlines",
+    "client_name": "Anthony",
+    "email": "tight-lines@telus.net",
+    "notes": "Update pricing",
+    "waiting_trusses": false,
+    "waiting_ewp": true,
+    "activity_log": [
+      {
+        "ts": "2026-09-24T21:13:58.280Z",
+        "text": "Taiga quoting open web"
+      },
+      {
+        "ts": "2026-09-25T22:33:48.129Z",
+        "text": "quote trusses"
+      },
+      {
+        "ts": "2026-09-25T22:38:24.837Z",
+        "text": "sent truss quote"
+      },
+      {
+        "ts": "2026-11-02T15:59:31.426Z",
+        "text": "test"
+      }
+    ]
+  },
+  "TW26190": {
+    "created_date": "2026-09-23",
+    "due_date": "2026-12-08",
+    "quote_number": "Q260727",
+    "address": "5955 McKinney Rd. Oliver, B.C.",
+    "client_name": "Mark",
+    "status": "QUOTE SENT",
+    "phone": "250-498-9818 ",
+    "quote_sent_date": "2026-11-25",
+    "waiting_trusses": false
+  },
+  "TW26191": {
+    "created_date": "2026-09-24",
+    "due_date": "2026-10-08",
+    "status": "QUOTE SENT",
+    "contractor_name": "Southbench Dev",
+    "address": "593 Vancouver Ave.",
+    "client_name": "Ran",
+    "email": "info@southbench.com",
+    "quote_number": "Q260642",
+    "quote_sent_date": "2026-10-05"
+  },
+  "TW26192": {
+    "created_date": "2026-09-24",
+    "due_date": "2026-10-12",
+    "status": "QUOTE SENT",
+    "contractor_name": "Brent Bush",
+    "address": "951 & 963 Dynes Ave. Pentincton",
+    "client_name": "Brent",
+    "phone": "403-875-8126",
+    "email": "brentbush75@gmail.com",
+    "notes": "Building 1 quoted",
+    "activity_log": [
+      {
+        "ts": "2026-10-07T16:56:58.682Z",
+        "text": "sent quote for building 1"
+      }
+    ],
+    "quote_sent_date": "2026-10-08"
+  },
+  "TW26193": {
+    "created_date": "2026-09-25",
+    "due_date": "2026-10-14",
+    "status": "IN PROGRESS",
+    "contractor_name": "Parallel 50",
+    "address": "101 Penticton Ave. Penticton, B.C.",
+    "client_name": "Jarrod",
+    "phone": "250-488-6060",
+    "quote_number": "Q260644",
+    "waiting_trusses": false,
+    "quote_sent_date": "2026-10-07"
+  },
+  "TW26194": {
+    "created_date": "2026-10-05",
+    "due_date": "2026-10-30",
+    "status": "QUOTE SENT",
+    "contractor_name": "Scuka",
+    "address": "871 Westminster Ave. Kamloops B.C.",
+    "client_name": "Miha Merlak",
+    "phone": "250-859-5681",
+    "email": "miha.merlak@scuka.ca",
+    "waiting_ewp": false,
+    "notes": "ATS Quote",
+    "quote_sent_date": "2026-10-19"
+  },
+  "TW26195": {
+    "created_date": "2026-10-21",
+    "due_date": "2026-11-04",
+    "contractor_name": "Greyback",
+    "address": "Rossland",
+    "client_name": "Andrew",
+    "phone": "250-487-8971",
+    "email": "akoteles@greyback.com",
+    "status": "QUOTE SENT"
+  },
+  "TW26196": {
+    "created_date": "2026-10-22",
+    "due_date": "2026-11-05",
+    "status": "QUOTE SENT",
+    "contractor_name": "Okanagan Custom Homes",
+    "address": "399 Green Ave. W. Penticton, B.C.",
+    "client_name": "Joe W",
+    "phone": "250-809-9519",
+    "email": "joew@okanagancustomhomes.com",
+    "quote_number": "Q260670",
+    "quote_sent_date": "2026-10-29"
+  },
+  "TW26197": {
+    "created_date": "2026-10-23",
+    "due_date": "2026-11-06",
+    "status": "QUOTE SENT",
+    "contractor_name": "Parkes Construction",
+    "address": "525 Dagur Way Princeton, B.C.",
+    "client_name": "Steve",
+    "phone": "250-295-8521",
+    "email": "sparkes752@gmail.com",
+    "waiting_trusses": false,
+    "quote_number": "Q260678",
+    "quote_sent_date": "2026-10-29",
+    "notes": "Quote 10' garage header under truss bearing"
+  },
+  "TW26198": {
+    "created_date": "2026-10-23",
+    "due_date": "2026-11-13",
+    "status": "QUOTE SENT",
+    "client_name": "Justin Parker",
+    "phone": "250-486-0708",
+    "email": "justinparker@telus.net",
+    "notes": "Addition, quote floor joists\n\nWill send in plans for truss quote. quote from Alpha Truss.",
+    "quote_sent_date": "2026-10-27",
+    "activity_log": [
+      {
+        "ts": "2026-10-29T15:25:36.212Z",
+        "text": "waiting for more details plans"
+      },
+      {
+        "ts": "2026-10-29T15:25:53.704Z",
+        "text": "waiting for glulam quote"
+      }
+    ],
+    "waiting_ewp": false
+  },
+  "TW26199": {
+    "created_date": "2026-10-23",
+    "due_date": "2026-11-06",
+    "contractor_name": "Sundown Contracting",
+    "address": "109 Uplands Dr. St. Andrews, B.C.",
+    "client_name": "Sundown",
+    "phone": "250-274-8888",
+    "email": "info@sundown-contracting.com",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-10-23"
+  },
+  "TW26200": {
+    "created_date": "2026-10-27",
+    "due_date": "2026-11-10",
+    "status": "DESIGNING",
+    "contractor_name": "Red Stag",
+    "address": "109 Cougar Rd., Mt. Baldy, Oliver, BC",
+    "phone": "250-488-6743",
+    "email": "joel@redstagcontracting.ca",
+    "waiting_trusses": true,
+    "notes": "Alpha Quoting\n\nEWP QUOTES SENT",
+    "activity_log": [
+      {
+        "ts": "2026-10-29T20:55:03.095Z",
+        "text": "Sent EWP quotes"
+      },
+      {
+        "ts": "2026-11-10T15:30:02.612Z",
+        "text": "updated joel with truss delay"
+      }
+    ]
+  },
+  "TW26201": {
+    "created_date": "2026-10-30",
+    "due_date": "2026-11-13",
+    "status": "QUOTE SENT",
+    "contractor_name": "Whitfield",
+    "address": "92 Fish Lake Rd. Summerland, B.C.",
+    "client_name": "Jeff Dolan",
+    "phone": "250-486-3613",
+    "email": "jeff@whitfieldhomes.ca",
+    "waiting_trusses": false,
+    "quote_number": "Q260710",
+    "quote_sent_date": "2026-11-16"
+  },
+  "TW26202": {
+    "created_date": "2026-11-03",
+    "due_date": "2026-11-17",
+    "status": "SOLD"
+  },
+  "TW26203": {
+    "created_date": "2026-11-03",
+    "due_date": "2026-11-17",
+    "status": "QUOTE SENT",
+    "contractor_name": "TCD Rock and Dirt",
+    "address": "750 Toy Creek Rd. Twin Lakes, B.C.",
+    "client_name": "Tanner",
+    "phone": "250-488-9879",
+    "waiting_trusses": false,
+    "quote_number": "SEE NOTES",
+    "notes": "Q26693 - 40x100\nQ26694 - 45x100\nQ26695 - 50x100",
+    "quote_sent_date": "2026-11-05"
+  },
+  "TW26204": {
+    "created_date": "2026-11-03",
+    "due_date": "2026-11-10",
+    "contractor_name": "T. Blackwell",
+    "address": "2501 WORKMAN PLACE, NARAMATA B.C.",
+    "client_name": "Trevor",
+    "phone": "778-319-2141",
+    "email": "trevor@blackwellconstruction.ca",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "activity_log": [
+      {
+        "ts": "2026-11-04T21:18:52.364Z",
+        "text": "sent ewp quote"
+      }
+    ],
+    "quote_number": "Q260696",
+    "quote_sent_date": "2026-11-09",
+    "notes": "Barnett also quoting."
+  },
+  "TW26205": {
+    "created_date": "2026-11-03",
+    "due_date": "2026-11-17",
+    "address": "5900 McKinney Rd. Oliver, B.C.",
+    "client_name": "Rodney",
+    "phone": "250-809-2329",
+    "email": "rzeeman35@gmail.com",
+    "status": "QUOTE SENT",
+    "waiting_trusses": false,
+    "quote_number": "Q260697",
+    "waiting_ewp": false,
+    "quote_sent_date": "2026-11-12"
+  },
+  "TW26206": {
+    "created_date": "2026-11-04",
+    "due_date": "2026-11-18",
+    "status": "QUOTE SENT",
+    "address": "115 Caribou Court, Osoyoos, B.C.",
+    "client_name": "Patricia",
+    "phone": "403-681-2782",
+    "email": "patricia.a.fortugno@gmail.com",
+    "notes": "pricing for the truss and engineered wood package\ndesign / engineering fees\nestimated design turnaround\nfabrication lead time\ndelivery cost to Osoyoos\nconfirmation of what engineering drawings and sealed documents are included",
+    "quote_number": "Q260698",
+    "waiting_trusses": false,
+    "quote_sent_date": "2026-11-12"
+  },
+  "TW26207": {
+    "created_date": "2026-11-05",
+    "due_date": "2026-11-19",
+    "status": "IN PROGRESS",
+    "contractor_name": "EM-T Homes",
+    "address": "126 Grandview St. Penticton, BC",
+    "client_name": "Brad",
+    "phone": "250-490-6016",
+    "email": "emthomes1@gmail.com",
+    "quote_sent_date": "2026-11-16",
+    "waiting_trusses": true,
+    "notes": "Alpha quoting floor trusses"
+  },
+  "TW26208": {
+    "created_date": "2026-11-09",
+    "due_date": "2026-11-23",
+    "status": "QUOTE SENT",
+    "quote_sent_date": "2026-11-18"
+  },
+  "TW26209": {
+    "created_date": "2026-11-09",
+    "due_date": "2026-11-12",
+    "notes": "I-joist roof?",
+    "contractor_name": "Scherger ",
+    "address": "689 Winnipeg St. Penticton, B.C.",
+    "client_name": "Darren",
+    "status": "IN PROGRESS",
+    "quote_number": "Q250405",
+    "waiting_trusses": false
+  },
+  "TW26210": {
+    "created_date": "2026-11-10",
+    "due_date": "2026-11-24",
+    "status": "QUOTE SENT",
+    "contractor_name": "Renshaw",
+    "address": "1017 Lambert Dr. Penticton, B.C.",
+    "client_name": "Curt",
+    "phone": "250-462-2114",
+    "email": "curt@renshawcontracting.com",
+    "waiting_trusses": false,
+    "quote_number": "Q260709",
+    "quote_sent_date": "2026-11-18"
+  },
+  "TW26211": {
+    "created_date": "2026-11-10",
+    "due_date": "2026-11-24",
+    "status": "QUOTE SENT",
+    "address": "1073 Moosejaw St. Penticton, B.C.",
+    "client_name": "Taras",
+    "phone": "250-328-2881",
+    "email": "kin@pentictonrealty.com",
+    "waiting_trusses": false,
+    "quote_number": "Q260711",
+    "quote_sent_date": "2026-11-16"
+  },
+  "TW26212": {
+    "created_date": "2026-11-10",
+    "due_date": "2026-11-12",
+    "status": "QUOTE SENT",
+    "contractor_name": "Wildhawk",
+    "address": "175 Bighorn Point, Osoyoos, B.C.",
+    "email": "wildhawkconstruction@gmail.com",
+    "quote_sent_date": "2026-11-12",
+    "notes": "Ship stock with special order products"
+  },
+  "TW26213": {
+    "created_date": "2026-11-13",
+    "due_date": "2026-11-27",
+    "status": "DESIGNING",
+    "contractor_name": "Greyledge",
+    "address": "260 Alder Ave. Kaledan, B.C.",
+    "client_name": "Tyler",
+    "phone": "250-462-1415",
+    "email": "greyledgecustomhomes@gmail.com",
+    "activity_log": [
+      {
+        "ts": "2026-11-13T15:32:04.199Z",
+        "text": "sent lumber take-off"
+      }
+    ],
+    "waiting_trusses": true
+  },
+  "TW26214": {
+    "created_date": "2026-11-17",
+    "due_date": "2026-12-01",
+    "status": "IN PROGRESS",
+    "contractor_name": "Greyback",
+    "address": "Skaha Hills",
+    "client_name": "Alec",
+    "email": "arufiange@greyback.com",
+    "waiting_ewp": true,
+    "activity_log": [
+      {
+        "ts": "2026-11-19T15:29:18.035Z",
+        "text": "RECEIVED ANCHOR QUOTE"
+      }
+    ]
+  },
+  "TW26215": {
+    "created_date": "2026-11-18",
+    "due_date": "2026-12-02",
+    "status": "QUOTE SENT",
+    "address": "609 45th st. Osoyoos, B.C.",
+    "phone": "250-498-7128",
+    "waiting_trusses": false,
+    "notes": "Q260720\n\nQ260721",
+    "quote_number": "SEE NOTES",
+    "quote_sent_date": "2026-11-19"
+  },
+  "TW26216": {
+    "created_date": "2026-11-24",
+    "due_date": "2026-12-08",
+    "status": "COMPLETE",
+    "contractor_name": "Ritchie",
+    "client_name": "Jessica",
+    "email": "jessica@ritchiecustomhomes.com",
+    "notes": "Engineering Schedules"
+  },
+  "TW26217": {
+    "created_date": "2026-11-24",
+    "due_date": "2026-12-08",
+    "status": "QUOTE SENT",
+    "contractor_name": "Sunrise Restorations",
+    "address": "100 Brauns Rd. Oliver, B.C.",
+    "client_name": "John Nunes",
+    "phone": "250-498-2250",
+    "email": "jnunes@sunriserestorations.ca",
+    "quote_sent_date": "2026-11-25"
+  },
+  "TW26218": {
+    "created_date": "2026-11-24",
+    "due_date": "2026-12-08",
+    "status": "QUOTE SENT",
+    "contractor_name": "Sunrise Restorations",
+    "address": "283 Oak Ave.",
+    "client_name": "John Nunes",
+    "phone": "250-498-2250",
+    "email": "jnunes@sunriserestorations.ca",
+    "waiting_ewp": false,
+    "activity_log": [
+      {
+        "ts": "2026-11-25T15:01:58.773Z",
+        "text": "sent for glulam quote"
+      }
+    ],
+    "quote_sent_date": "2026-11-25"
+  },
+  "TW26219": {
+    "created_date": "2026-11-24",
+    "due_date": "2026-12-08",
+    "status": "DESIGNING",
+    "contractor_name": "Sunrise Restorations",
+    "address": "101 Bighorn Point",
+    "client_name": "John Nunes",
+    "phone": "250-498-2250",
+    "email": "jnunes@sunriserestorations.ca",
+    "notes": "Framing\nICF",
+    "quote_number": "Q260728",
+    "waiting_trusses": true
+  }
+}

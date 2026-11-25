@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTracker3000</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+  }
+
+  /* ── Setup overlay (first-run / settings) ── */
+  #setup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+  }
+  #setup-overlay.open { display: flex; }
+
+  #setup-box {
+    border: 2px solid #add8e6;
+    padding: 36px;
+    width: 520px;
+    max-width: 95vw;
+  }
+
+  #setup-box h1 {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color: #add8e6;
+    margin-bottom: 8px;
+  }
+
+  #setup-box .setup-sub {
+    color: #666;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .setup-path-row {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  #setup-path {
+    flex: 1;
+    padding: 8px 12px;
+    background: #111;
+    border: 1px solid #444;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+  }
+  #setup-path:focus { border-color: #add8e6; }
+
+  #setup-browse {
+    padding: 8px 16px;
+    background: #222;
+    border: 1px solid #555;
+    color: #add8e6;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  #setup-browse:hover { background: #333; }
+  #setup-browse:disabled { opacity: 0.4; cursor: default; }
+
+  .setup-hint {
+    font-size: 0.72rem;
+    color: #555;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  .setup-error {
+    color: #cc0000;
+    font-size: 0.8rem;
+    min-height: 18px;
+    margin-top: 8px;
+  }
+
+  #setup-confirm {
+    margin-top: 24px;
+    width: 100%;
+    padding: 10px;
+    background: #1a7f1a;
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  #setup-confirm:hover { background: #23a023; }
+  #setup-confirm:disabled { opacity: 0.4; cursor: default; }
+
+  #shutdown-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid #440000;
+    color: #883333;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  #shutdown-btn:hover { border-color: #cc3333; color: #cc3333; }
+
+  /* ── Main app (hidden until setup done) ── */
+  #app { display: none; }
+  #app.ready { display: block; }
+
+  /* ── Sticky top wrapper ── */
+  #sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #000;
+  }
+
+  /* ── Header ── */
+  #header {
+    display: flex;
+    align-items: center;
+    padding: 6px 120px;
+    border-bottom: 1px solid #333;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  #title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: auto;
+  }
+
+  .status-btn {
+    padding: 3px 12px;
+    border: 1px solid #555;
+    background: #222;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .status-btn:hover { opacity: 0.8; }
+  .status-btn.active { border-color: #fff; }
+  .status-btn[data-filter="ALL"]         { background: #444; }
+  .status-btn[data-filter="DESIGNING"]   { background: #6644bb; }
+  .status-btn[data-filter="IN PROGRESS"] { background: #555; }
+  .status-btn[data-filter="QUOTE SENT"]  { background: #b8a000; color: #000; }
+  .status-btn[data-filter="SOLD"]        { background: #1a7f1a; }
+
+  #add-btn {
+    padding: 3px 10px;
+    background: transparent;
+    border: none;
+    color: #cc0000;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  #add-btn:hover { color: #ff2222; }
+
+  #settings-btn {
+    padding: 3px 7px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #555;
+    font-family: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+  }
+  #settings-btn:hover { border-color: #888; color: #aaa; }
+
+  /* ── Search ── */
+  #search-row {
+    padding: 5px 120px;
+    border-bottom: 1px solid #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #search {
+    width: 240px;
+    padding: 3px 8px;
+    background: #add8e6;
+    border: 1px solid #89b4c8;
+    color: #000;
+    font-family: inherit;
+    font-size: 0.78rem;
+    outline: none;
+  }
+  #search::placeholder { color: #445; }
+
+  /* ── Table ── */
+  #table-wrap {
+    padding: 0 120px 24px;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 3px;
+    margin-top: 4px;
+  }
+
+  thead th {
+    background: #add8e6;
+    color: #000;
+    padding: 3px 8px;
+    text-align: left;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 1px solid #89b4c8;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th:hover { background: #89c8e0; }
+  thead th.sorted .sort-arrow { opacity: 1; }
+  .sort-arrow { margin-left: 3px; opacity: 0.4; }
+
+  tbody tr {
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+  tbody tr:hover { background: #111; }
+  tbody tr td { border-color: #add8e6; }
+  tbody tr td.job-id-link { background: #add8e6; color: #000; }
+  tbody tr.row-design td  { border-color: #6644bb; }
+  tbody tr.row-design td.job-id-link { background: #6644bb; color: #fff; }
+  tbody tr.row-design:hover { background: #0e0a1a; }
+  tbody tr.row-sold td     { border-color: #1a7f1a; }
+  tbody tr.row-sold td.job-id-link { background: #1a7f1a; color: #fff; }
+  tbody tr.row-sold:hover  { background: #0a1a0a; }
+  tbody tr.row-quote td    { border-color: #b8a000; }
+  tbody tr.row-quote td.job-id-link { background: #b8a000; color: #000; }
+  tbody tr.row-quote:hover { background: #1a1800; }
+  tbody tr.row-overdue td  { border-color: #cc3333; }
+  tbody tr.row-overdue td.job-id-link { background: #cc3333; color: #fff; }
+  tbody tr.row-overdue:hover { background: #1a0a0a; }
+  tbody tr.row-complete td { border-color: #555; }
+  tbody tr.row-complete td.job-id-link { background: #555; color: #ccc; }
+  tbody tr.row-complete    { color: #666; }
+  tbody tr.row-complete:hover { background: #111; }
+
+  tbody td {
+    padding: 2px 8px;
+    border: 1px solid #add8e6;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 0.62rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 2px;
+  }
+  .badge-design   { background: #6644bb; color: #fff; }
+  .badge-ip       { background: #555; color: #fff; }
+  .badge-qs       { background: #b8a000; color: #000; }
+  .badge-sold     { background: #1a7f1a; color: #fff; }
+  .badge-complete { background: #666; color: #ccc; }
+  .badge-new      { background: #333; color: #aaa; }
+
+  .days-ago {
+    font-size: 0.6rem;
+    color: #777;
+    margin-left: 4px;
+    font-style: italic;
+  }
+
+  /* ── Design progress bar (due date cell) ── */
+  .due-progress-cell {
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  .due-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+  .due-progress-label {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 2px 8px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  /* ── Stats bar ── */
+  #stats-bar {
+    padding: 4px 120px;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    gap: 20px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: #555;
+  }
+  .stat-item { cursor: pointer; opacity: 0.5; transition: opacity 0.15s; }
+  .stat-item:hover { opacity: 0.8; }
+  .stat-item.stat-active { opacity: 1; }
+  .stat-count { font-weight: bold; margin-left: 4px; }
+  .stat-all    { color: #aaa; }
+  .stat-design { color: #8866dd; }
+  .stat-ip     { color: #888; }
+  .stat-qs    { color: #b8a000; }
+  .stat-sold  { color: #1a7f1a; }
+  .stat-arch  { color: #555; }
+
+  /* ── Right-click context menu ── */
+  #ctx-menu {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    background: #111;
+    border: 1px solid #444;
+    padding: 4px 0;
+    min-width: 150px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  }
+  #ctx-menu.open { display: block; }
+  .ctx-item {
+    padding: 6px 16px;
+    font-size: 0.78rem;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #ccc;
+  }
+  .ctx-item:hover { background: #222; color: #fff; }
+  .ctx-divider { border-top: 1px solid #333; margin: 3px 0; }
+  .ctx-item.ctx-design { color: #8866dd; }
+  .ctx-item.ctx-ip   { color: #aaa; }
+  .ctx-item.ctx-qs   { color: #b8a000; }
+  .ctx-item.ctx-sold { color: #1a7f1a; }
+  .ctx-item.ctx-arch { color: #777; }
+  .ctx-item.ctx-edit { color: #add8e6; }
+  .ctx-item.ctx-waiting { color: #e08600; }
+  .ctx-item.ctx-waiting.active { color: #ffb347; }
+  .ctx-item.ctx-waiting.active::before { content: '✓ '; }
+
+  .waiting-ewp {
+    background: #e08600 !important;
+    color: #000 !important;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 1px 4px;
+  }
+  .waiting-trusses {
+    background: #e08600 !important;
+    color: #000 !important;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 1px 4px;
+  }
+
+  .no-jobs {
+    text-align: center;
+    color: #444;
+    padding: 60px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  /* ── Hammer (ISL) button ── */
+  .hammer-cell {
+    width: 34px;
+    text-align: center;
+    padding: 0 4px !important;
+    border-right: none !important;
+  }
+  thead th.hammer-cell { cursor: default; }
+  thead th.hammer-cell:hover { background: inherit; }
+
+  .hammer-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.82rem;
+    padding: 0px 3px;
+    border-radius: 3px;
+    line-height: 1;
+  }
+  .hammer-btn:hover { background: rgba(255,255,255,0.1); }
+
+  /* ── Job number folder link ── */
+  .job-id-link {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(0,0,0,0.3);
+    font-weight: bold;
+  }
+  .job-id-link:hover {
+    text-decoration-color: rgba(0,0,0,0.9);
+  }
+  tbody tr.row-sold td.job-id-link,
+  tbody tr.row-overdue td.job-id-link,
+  tbody tr.row-complete td.job-id-link {
+    text-decoration-color: rgba(255,255,255,0.3);
+  }
+  tbody tr.row-sold td.job-id-link:hover,
+  tbody tr.row-overdue td.job-id-link:hover,
+  tbody tr.row-complete td.job-id-link:hover {
+    text-decoration-color: rgba(255,255,255,0.9);
+  }
+
+  /* ── Status group divider row ── */
+  tr.group-divider td {
+    height: 12px;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    pointer-events: none;
+  }
+
+  /* ── Inline detail panel ── */
+  .detail-row { display: none; }
+  .detail-row.open { display: table-row; }
+
+  .detail-row > td {
+    background: #0a1e2a;
+    border: 1px solid #1a4a5a;
+    border-top: none;
+    padding: 14px 20px 16px;
+    white-space: normal;
+  }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px 24px;
+  }
+
+  .detail-field label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #4a8fa8;
+    margin-bottom: 3px;
+  }
+
+  .detail-field .dv {
+    color: #d0eaf5;
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+
+  .detail-notes {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #1a3a4a;
+  }
+
+  .detail-notes label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #4a8fa8;
+    margin-bottom: 4px;
+  }
+
+  .detail-notes .dv {
+    color: #d0eaf5;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+
+  .detail-empty {
+    color: #333;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  /* ── Activity log ── */
+  .activity-log {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #1a3a4a;
+  }
+  .activity-log label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #4a8fa8;
+    margin-bottom: 6px;
+  }
+  .log-entries {
+    max-height: 180px;
+    overflow-y: auto;
+    margin-bottom: 8px;
+  }
+  .log-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 0;
+    border-bottom: 1px solid #0d2a36;
+    font-size: 0.8rem;
+  }
+  .log-ts {
+    color: #4a8fa8;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    min-width: 110px;
+    padding-top: 1px;
+  }
+  .log-text {
+    color: #d0eaf5;
+    flex: 1;
+    word-break: break-word;
+  }
+  .log-del {
+    background: none;
+    border: none;
+    color: #553333;
+    cursor: pointer;
+    font-size: 0.7rem;
+    padding: 0 4px;
+    line-height: 1;
+  }
+  .log-del:hover { color: #cc4444; }
+  .log-input-row {
+    display: flex;
+    gap: 6px;
+  }
+  .log-input {
+    flex: 1;
+    padding: 4px 8px;
+    background: #0a1e2a;
+    border: 1px solid #1a4a5a;
+    color: #d0eaf5;
+    font-family: inherit;
+    font-size: 0.78rem;
+    outline: none;
+  }
+  .log-input::placeholder { color: #2a5a6a; }
+  .log-input:focus { border-color: #3a7a9a; }
+  .log-add-btn {
+    padding: 4px 12px;
+    background: #1a4a5a;
+    border: 1px solid #2a6a7a;
+    color: #add8e6;
+    font-family: inherit;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .log-add-btn:hover { background: #2a5a6a; }
+  .log-empty {
+    color: #2a4a5a;
+    font-size: 0.75rem;
+    font-style: italic;
+    padding: 4px 0;
+  }
+
+  /* ── Calendar toggle button ── */
+  #cal-btn {
+    padding: 3px 10px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #555;
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  #cal-btn:hover { border-color: #888; color: #aaa; }
+  #cal-btn.active { border-color: #add8e6; color: #add8e6; }
+
+  /* ── Calendar view ── */
+  #cal-view {
+    display: none;
+    padding: 0 40px 40px;
+  }
+  #cal-nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 12px 0 16px;
+  }
+  #cal-nav button {
+    background: transparent;
+    border: 1px solid #333;
+    color: #555;
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+  #cal-nav button:hover { border-color: #add8e6; color: #add8e6; }
+  #cal-month-label {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: #add8e6;
+  }
+  #cal-months {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .cal-month-wrap {
+    width: 100%;
+  }
+  .cal-month-title {
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+    color: #add8e6;
+    padding-bottom: 10px;
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+  }
+  .cal-day-head {
+    text-align: center;
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    color: #444;
+    padding: 6px 4px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .cal-day {
+    min-height: 90px;
+    background: #080808;
+    border: 1px solid #151515;
+    padding: 5px;
+    vertical-align: top;
+    transition: border-color 0.1s;
+  }
+  .cal-day.today { border-color: #2a5a6a; }
+  .cal-day.cal-drop-over { border-color: #add8e6; background: #0a1a22; }
+  .cal-day.other-month { background: #040404; opacity: 0.45; }
+  .cal-day-num {
+    display: block;
+    font-size: 0.65rem;
+    color: #444;
+    text-align: right;
+    margin-bottom: 4px;
+    letter-spacing: 0;
+  }
+  .cal-day.today .cal-day-num { color: #add8e6; font-weight: bold; }
+  .cal-job {
+    display: block;
+    font-size: 0.67rem;
+    padding: 2px 5px;
+    margin-bottom: 2px;
+    border-left: 3px solid;
+    background: rgba(255,255,255,0.03);
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;
+  }
+  .cal-job:hover { background: rgba(255,255,255,0.09); }
+  .cal-job.cj-design  { border-color: #6644bb; color: #9977dd; }
+  .cal-job.cj-ip      { border-color: #4a8fa8; color: #add8e6; }
+  .cal-job.cj-overdue { border-color: #cc3333; color: #cc5555; }
+
+  /* ── Export button ── */
+  #export-btn {
+    padding: 3px 10px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #555;
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  #export-btn:hover { border-color: #888; color: #aaa; }
+
+  /* ── Contractor autocomplete ── */
+  .contractor-wrap {
+    position: relative;
+  }
+  .contractor-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: #1a1a1a;
+    border: 1px solid #add8e6;
+    border-top: none;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+  .contractor-dropdown.open { display: block; }
+  .contractor-opt {
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contractor-opt:hover, .contractor-opt.highlighted { background: #222; color: #fff; }
+  .contractor-opt .co-detail {
+    font-size: 0.65rem;
+    color: #666;
+    margin-left: 12px;
+  }
+
+  /* ── Contact picker panel ── */
+  .contact-picker-panel {
+    display: none;
+    margin-top: -10px;
+    margin-bottom: 14px;
+    border: 1px solid #1a4a5a;
+    background: #060e14;
+  }
+  .contact-picker-panel.open { display: block; }
+  .contact-picker-header {
+    padding: 4px 10px;
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+    color: #4a8fa8;
+    border-bottom: 1px solid #1a4a5a;
+  }
+  .cp-opt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #0d1e28;
+    font-size: 0.78rem;
+    color: #ccc;
+  }
+  .cp-opt:last-child { border-bottom: none; }
+  .cp-opt:hover { background: #0d2030; color: #fff; }
+  .cp-opt.selected { background: #0d2a3a; color: #add8e6; }
+  .cp-opt.selected::before { content: '▶ '; font-size: 0.6rem; color: #add8e6; }
+  .cp-opt:not(.selected):not(.cp-new)::before { content: ''; display: inline-block; width: 1rem; }
+  .cp-name { font-weight: bold; min-width: 120px; }
+  .cp-phone { color: #777; font-size: 0.72rem; }
+  .cp-email { color: #666; font-size: 0.7rem; flex: 1; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+  .cp-new { color: #3a9a3a; font-style: italic; }
+  .cp-new:hover { color: #5acc5a; }
+  .cp-del {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #553333;
+    cursor: pointer;
+    font-size: 0.7rem;
+    padding: 0 4px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .cp-del:hover { color: #cc4444; }
+
+  /* ── Shared modal base ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal-box {
+    background: #111;
+    border: 2px solid #add8e6;
+    width: 580px;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 26px;
+  }
+
+  .modal-box h2 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #add8e6;
+    margin-bottom: 4px;
+  }
+
+  .modal-subtitle {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  .field-group { margin-bottom: 14px; }
+
+  .field-group label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: #aaa;
+    margin-bottom: 4px;
+  }
+
+  .field-group input,
+  .field-group select,
+  .field-group textarea {
+    width: 100%;
+    padding: 6px 10px;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+  }
+  .field-group input:focus,
+  .field-group select:focus,
+  .field-group textarea:focus { border-color: #add8e6; }
+  .field-group textarea { resize: vertical; min-height: 70px; }
+  .field-group select option { background: #1a1a1a; }
+
+  .hint {
+    font-size: 0.72rem;
+    color: #555;
+    margin-top: 4px;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid #222;
+    margin: 18px 0 14px;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #444;
+    margin-bottom: 14px;
+  }
+
+  .field-row { display: flex; gap: 12px; }
+  .field-row .field-group { flex: 1; }
+
+  .detail-copy-btn {
+    background: transparent;
+    border: 1px solid #1a4a5a;
+    color: #4a8fa8;
+    cursor: pointer;
+    font-size: 0.7rem;
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-left: 6px;
+    vertical-align: middle;
+    transition: color 0.15s, border-color 0.15s;
+    line-height: 1.4;
+  }
+  .detail-copy-btn:hover { color: #add8e6; border-color: #add8e6; }
+  .detail-copy-btn.copied { color: #1a7f1a; border-color: #1a7f1a; }
+
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
+
+  .btn-save {
+    padding: 8px 24px;
+    background: #1a7f1a;
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .btn-save:hover { background: #23a023; }
+
+  .btn-cancel {
+    padding: 8px 18px;
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .btn-cancel:hover { border-color: #aaa; color: #fff; }
+
+  /* ── Add job modal ── */
+  #add-modal .modal-box { border-color: #cc0000; }
+  #add-modal h2 { color: #cc0000; }
+
+  .job-id-row { display: flex; align-items: center; gap: 10px; }
+  .job-id-row input { width: 80px !important; flex: none; text-align: center; font-size: 1rem !important; letter-spacing: 2px; }
+  .job-id-preview { font-size: 1rem; color: #add8e6; letter-spacing: 2px; }
+
+  .modal-error { color: #cc0000; font-size: 0.8rem; min-height: 18px; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<!-- ── First-run / Settings overlay ── -->
+<div id="setup-overlay">
+  <div id="setup-box">
+    <h1>JOBTRACKER3000</h1>
+    <p class="setup-sub">
+      Select your Jobs root folder to get started.<br>
+      Inside it, jobs are organised by year: <span style="color:#add8e6">Jobs Root / 2026 / TW26001 Project Name</span>
+    </p>
+
+    <div class="field-group">
+      <label>JOBS ROOT FOLDER</label>
+      <div class="setup-path-row">
+        <input id="setup-path" type="text" placeholder="e.g. C:\Jobs">
+        <button id="setup-browse">BROWSE...</button>
+      </div>
+      <div class="hint">Pick or type the root folder. Year subfolders are created automatically.</div>
+    </div>
+
+    <div class="setup-error" id="setup-error"></div>
+
+    <button id="setup-confirm">CONFIRM &amp; OPEN</button>
+    <button id="shutdown-btn">SHUT DOWN SERVER</button>
+  </div>
+</div>
+
+<!-- ── Main app ── -->
+<div id="app">
+
+  <div id="sticky-top">
+    <div id="header">
+      <span id="title">JOBTRACKER3000</span>
+      <button id="cal-btn">CALENDAR</button>
+      <button id="settings-btn" title="Change jobs folder">&#9881;</button>
+    </div>
+
+    <div id="search-row">
+      <input id="search" type="text" placeholder="SEARCH BAR">
+      <button id="export-btn">EXPORT CSV</button>
+      <button id="add-btn">ADD NEW JOB +</button>
+    </div>
+  </div>
+
+  <div id="stats-bar">
+    <span class="stat-item stat-all stat-active" data-filter="ALL">ALL <span class="stat-count" id="stat-all">0</span></span>
+    <span class="stat-item stat-design" data-filter="DESIGNING">DESIGNING <span class="stat-count" id="stat-design">0</span></span>
+    <span class="stat-item stat-ip" data-filter="IN PROGRESS">IN PROGRESS <span class="stat-count" id="stat-ip">0</span></span>
+    <span class="stat-item stat-qs" data-filter="QUOTE SENT">QUOTE SENT <span class="stat-count" id="stat-qs">0</span></span>
+    <span class="stat-item stat-sold" data-filter="SOLD">SOLD <span class="stat-count" id="stat-sold">0</span></span>
+    <span class="stat-item stat-arch" data-filter="COMPLETE">ARCHIVED <span class="stat-count" id="stat-arch">0</span></span>
+  </div>
+
+  <div id="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="hammer-cell"></th>
+          <th data-col="job_id">JOB # <span class="sort-arrow">&#9660;</span></th>
+          <th data-col="quote_number">QUOTE # <span class="sort-arrow">&#9660;</span></th>
+          <th data-col="project_name">PROJECT NAME <span class="sort-arrow">&#9660;</span></th>
+          <th data-col="contractor_name">CONTRACTOR <span class="sort-arrow">&#9660;</span></th>
+          <th data-col="address">JOB ADDRESS <span class="sort-arrow">&#9660;</span></th>
+          <th data-col="due_date">DUE DATE <span class="sort-arrow">&#9660;</span></th>
+          <th data-col="quote_sent_date">QUOTE SENT <span class="sort-arrow">&#9660;</span></th>
+          <th data-col="status">STATUS <span class="sort-arrow">&#9660;</span></th>
+        </tr>
+      </thead>
+      <tbody id="job-tbody"></tbody>
+    </table>
+    <div id="no-jobs" class="no-jobs" style="display:none">NO JOBS FOUND</div>
+  </div>
+
+  <div id="cal-view">
+    <div id="cal-nav">
+      <button id="cal-prev">&#9664; PREV</button>
+      <span id="cal-month-label"></span>
+      <button id="cal-next">NEXT &#9654;</button>
+    </div>
+    <div id="cal-months"></div>
+  </div>
+
+</div>
+
+<!-- ── Job detail modal ── -->
+<div id="detail-modal" class="modal-overlay">
+  <div class="modal-box">
+    <h2 id="dm-title"></h2>
+    <div class="modal-subtitle" id="dm-subtitle"></div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>STATUS</label>
+        <select id="f-status">
+          <option value="">— Not set —</option>
+          <option value="DESIGNING">DESIGNING</option>
+          <option value="IN PROGRESS">IN PROGRESS</option>
+          <option value="QUOTE SENT">QUOTE SENT</option>
+          <option value="SOLD">SOLD</option>
+          <option value="COMPLETE">COMPLETE (ARCHIVED)</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>QUOTE #</label>
+        <input id="f-quote-number" type="text" placeholder="e.g. Q260001">
+      </div>
+    </div>
+
+    <div class="field-group contractor-wrap">
+      <label>CONTRACTOR NAME</label>
+      <input id="f-contractor" type="text" autocomplete="off">
+      <div class="contractor-dropdown" id="contractor-dropdown"></div>
+    </div>
+
+    <div class="contact-picker-panel" id="contact-picker-panel">
+      <div class="contact-picker-header">SELECT CONTACT</div>
+      <div id="contact-picker-list"></div>
+    </div>
+
+    <div class="field-group">
+      <label>JOB ADDRESS</label>
+      <input id="f-address" type="text">
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>DUE DATE</label>
+        <input id="f-due-date" type="date">
+      </div>
+      <div class="field-group">
+        <label>QUOTE SENT DATE</label>
+        <div style="display:flex; gap:6px; align-items:center;">
+          <input id="f-quote-sent-date" type="date" style="flex:1;">
+          <button id="mark-sent-today" title="Set to today and mark as Quote Sent" style="padding:4px 10px; background:#b8a000; border:none; color:#000; font-family:inherit; font-size:0.72rem; font-weight:bold; letter-spacing:1px; cursor:pointer; white-space:nowrap;">SENT TODAY</button>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+    <div class="section-label">EXTENDED DETAILS</div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>CLIENT NAME</label>
+        <input id="f-client" type="text">
+      </div>
+      <div class="field-group">
+        <label>PHONE</label>
+        <input id="f-phone" type="text">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>EMAIL</label>
+        <input id="f-email" type="email">
+      </div>
+      <div class="field-group">
+        <label>QUOTE VALUE ($)</label>
+        <input id="f-value" type="number" step="0.01" min="0">
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>NOTES</label>
+      <textarea id="f-notes"></textarea>
+    </div>
+
+    <div class="field-row" style="margin-top:10px;">
+      <div class="field-group">
+        <label>REVISION #</label>
+        <input id="f-revision" type="text" placeholder="e.g. Rev 3">
+      </div>
+      <div class="field-group" style="display:flex; align-items:flex-end;">
+        <button id="mark-sold" style="width:100%; padding:6px; background:#1a7f1a; border:none; color:#fff; font-family:inherit; font-size:0.72rem; font-weight:bold; letter-spacing:1px; cursor:pointer;">MARK AS SOLD</button>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" id="dm-cancel">CANCEL</button>
+      <button class="btn-save" id="dm-save">SAVE</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Right-click context menu ── -->
+<div id="ctx-menu">
+  <div class="ctx-item ctx-edit" data-action="edit">EDIT JOB</div>
+  <div class="ctx-divider"></div>
+  <div class="ctx-item ctx-design" data-status="DESIGNING">DESIGNING</div>
+  <div class="ctx-item ctx-ip"   data-status="IN PROGRESS">IN PROGRESS</div>
+  <div class="ctx-item ctx-qs"   data-status="QUOTE SENT">QUOTE SENT</div>
+  <div class="ctx-item ctx-sold" data-status="SOLD">SOLD</div>
+  <div class="ctx-divider"></div>
+  <div class="ctx-item ctx-waiting" data-waiting="waiting_ewp">WAITING FOR EWP</div>
+  <div class="ctx-item ctx-waiting" data-waiting="waiting_trusses">WAITING FOR TRUSSES</div>
+  <div class="ctx-divider"></div>
+  <div class="ctx-item ctx-arch" data-status="COMPLETE">ARCHIVE JOB</div>
+</div>
+
+<!-- ── Add New Job modal ── -->
+<div id="add-modal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>ADD NEW JOB</h2>
+
+    <div class="field-group">
+      <label>JOB NUMBER (last 3 digits)</label>
+      <div class="job-id-row">
+        <input id="new-digits" type="text" placeholder="001" maxlength="3" inputmode="numeric">
+        <span class="job-id-preview" id="id-preview">TW26???</span>
+      </div>
+      <div class="hint">Type 1–3 digits — full ID shown on the right</div>
+    </div>
+
+    <div class="field-group">
+      <label>PROJECT NAME</label>
+      <input id="new-name" type="text" placeholder="e.g. Smith Residence">
+    </div>
+
+    <div class="field-group">
+      <label>DUE DATE</label>
+      <input id="new-due-date" type="date">
+      <div class="hint">Defaults to 2 weeks from today</div>
+    </div>
+
+    <div class="modal-error" id="add-error"></div>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" id="add-cancel">CANCEL</button>
+      <button class="btn-save" id="add-save">CREATE JOB</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── State ──
+  let allJobs = [];
+  let activeFilter = 'ALL';
+  let sortCol = null;
+  let sortDir = 1;
+  let searchVal = '';
+  let currentJobId = null;
+
+  // ── Utilities ──
+
+  function esc(v) {
+    if (!v) return '';
+    return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function yearShort() { return new Date().getFullYear().toString().slice(-2); }
+
+  function buildJobId(digits) {
+    const padded = digits.replace(/\D/g,'').padStart(3,'0').slice(0,3);
+    return `TW${yearShort()}${padded}`;
+  }
+
+  function localDateString(d) {
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  }
+
+  function twoWeeksFromNow() {
+    const d = new Date();
+    d.setDate(d.getDate() + 14);
+    return localDateString(d);
+  }
+
+  function statusBadge(status) {
+    if (status === 'DESIGNING')   return `<span class="badge badge-design">DESIGNING</span>`;
+    if (status === 'IN PROGRESS') return `<span class="badge badge-ip">IN PROGRESS</span>`;
+    if (status === 'QUOTE SENT')  return `<span class="badge badge-qs">QUOTE SENT</span>`;
+    if (status === 'SOLD')        return `<span class="badge badge-sold">SOLD</span>`;
+    if (status === 'COMPLETE')    return `<span class="badge badge-complete">ARCHIVED</span>`;
+    return `<span class="badge badge-new">NEW</span>`;
+  }
+
+  function dueDateCell(job) {
+    if (job.status !== 'DESIGNING' || !job.due_date) {
+      return `<td>${esc(job.due_date)}</td>`;
+    }
+    const today   = new Date(localDateString(new Date()));
+    const due     = new Date(job.due_date);
+    const start   = job.created_date
+      ? new Date(job.created_date)
+      : new Date(due.getTime() - 14 * 86400000);
+
+    const total   = due - start;
+    const elapsed = today - start;
+    const pct     = total <= 0 ? 100 : Math.min(100, Math.max(0, (elapsed / total) * 100));
+
+    let fillColor;
+    if (pct >= 100)     fillColor = 'rgba(204,51,51,0.55)';
+    else if (pct >= 85) fillColor = 'rgba(210,100,0,0.5)';
+    else if (pct >= 60) fillColor = 'rgba(184,160,0,0.45)';
+    else                fillColor = 'rgba(102,68,187,0.4)';
+
+    return `<td class="due-progress-cell" title="${pct.toFixed(0)}% of time elapsed">
+      <div class="due-progress-fill" style="width:${pct}%;background:${fillColor}"></div>
+      <span class="due-progress-label">${esc(job.due_date)}</span>
+    </td>`;
+  }
+
+  function daysSince(dateStr) {
+    if (!dateStr) return null;
+    const diff = Math.floor((new Date() - new Date(dateStr)) / 86400000);
+    return diff >= 0 ? diff : null;
+  }
+
+  function isOverdue(job) {
+    if (!job.due_date) return false;
+    if (job.status === 'SOLD' || job.status === 'QUOTE SENT' || job.status === 'COMPLETE') return false;
+    return new Date(job.due_date) < new Date(localDateString(new Date()));
+  }
+
+  function updateStats() {
+    const active = allJobs.filter(j => j.status !== 'COMPLETE');
+    document.getElementById('stat-all').textContent    = active.length;
+    document.getElementById('stat-design').textContent = active.filter(j => j.status === 'DESIGNING').length;
+    document.getElementById('stat-ip').textContent     = active.filter(j => j.status === 'IN PROGRESS').length;
+    document.getElementById('stat-qs').textContent     = active.filter(j => j.status === 'QUOTE SENT').length;
+    document.getElementById('stat-sold').textContent   = active.filter(j => j.status === 'SOLD').length;
+    document.getElementById('stat-arch').textContent   = allJobs.filter(j => j.status === 'COMPLETE').length;
+  }
+
+  // ── Setup / first-run ──
+
+  const setupOverlay = document.getElementById('setup-overlay');
+  const appEl = document.getElementById('app');
+
+  function showSetup(prefill) {
+    if (prefill) document.getElementById('setup-path').value = prefill;
+    document.getElementById('setup-error').textContent = '';
+    setupOverlay.classList.add('open');
+    appEl.classList.remove('ready');
+  }
+
+  function hideSetup() {
+    setupOverlay.classList.remove('open');
+    appEl.classList.add('ready');
+  }
+
+  document.getElementById('setup-browse').addEventListener('click', async () => {
+    const btn = document.getElementById('setup-browse');
+    btn.disabled = true;
+    btn.textContent = 'Opening...';
+    try {
+      const res = await fetch('/api/setup/browse', { method: 'POST' });
+      const data = await res.json();
+      if (data.path) document.getElementById('setup-path').value = data.path;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'BROWSE...';
+    }
+  });
+
+  document.getElementById('setup-confirm').addEventListener('click', async () => {
+    const folder = document.getElementById('setup-path').value.trim();
+    const errEl = document.getElementById('setup-error');
+    if (!folder) { errEl.textContent = 'Please select or enter a folder path.'; return; }
+
+    const btn = document.getElementById('setup-confirm');
+    btn.disabled = true;
+    try {
+      const res = await fetch('/api/setup/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ jobsFolder: folder }),
+      });
+      if (!res.ok) {
+        const d = await res.json();
+        errEl.textContent = d.error || 'Failed to save folder.';
+        return;
+      }
+      hideSetup();
+      fetchJobs();
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  document.getElementById('settings-btn').addEventListener('click', async () => {
+    const res = await fetch('/api/config');
+    const cfg = await res.json();
+    showSetup(cfg.jobsFolder || '');
+  });
+
+  document.getElementById('shutdown-btn').addEventListener('click', async () => {
+    if (!confirm('Shut down the JobTracker server?')) return;
+    try { await fetch('/api/shutdown', { method: 'POST' }); } catch {}
+    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:\'Courier New\',monospace;color:#555;font-size:0.9rem;letter-spacing:2px;">SERVER OFFLINE</div>';
+  });
+
+  // ── Fetch & render ──
+
+  async function fetchJobs() {
+    try {
+      const openRow = document.querySelector('.detail-row.open');
+      const openId = openRow ? openRow.previousElementSibling?.dataset?.id : null;
+      const res = await fetch('/api/jobs');
+      allJobs = await res.json();
+      if (isCalView) {
+        renderCalendar();
+      } else {
+        render();
+        if (openId) {
+          const restored = document.querySelector(`tr[data-id="${openId}"] + .detail-row`);
+          if (restored) restored.classList.add('open');
+        }
+      }
+    } catch (e) { console.error('fetchJobs failed', e); }
+  }
+
+  function render() {
+    let jobs = allJobs.slice();
+
+    // ALL hides archived by default; COMPLETE filter shows only archived
+    if (activeFilter === 'ALL') {
+      jobs = jobs.filter(j => j.status !== 'COMPLETE');
+    } else {
+      jobs = jobs.filter(j => (j.status || '') === activeFilter);
+    }
+
+    if (searchVal) {
+      const q = searchVal.toLowerCase();
+      jobs = jobs.filter(j => Object.values(j).some(v => v && String(v).toLowerCase().includes(q)));
+    }
+
+    const statusOrder = { 'DESIGNING': 0, 'IN PROGRESS': 1, '': 1, 'QUOTE SENT': 2, 'SOLD': 3, 'COMPLETE': 4 };
+    jobs.sort((a, b) => {
+      if (!sortCol) {
+        const sa = statusOrder[a.status || ''] ?? 9;
+        const sb = statusOrder[b.status || ''] ?? 9;
+        if (sa !== sb) return sa - sb;
+        if (a.status === 'DESIGNING' && b.status === 'DESIGNING') {
+          if (a.due_date && b.due_date) return a.due_date.localeCompare(b.due_date);
+          if (a.due_date) return -1;
+          if (b.due_date) return 1;
+        }
+        return b.job_id.localeCompare(a.job_id);
+      }
+      const av = (a[sortCol] || '').toString().toLowerCase();
+      const bv = (b[sortCol] || '').toString().toLowerCase();
+      return av < bv ? sortDir : av > bv ? -sortDir : 0;
+    });
+
+    const tbody = document.getElementById('job-tbody');
+    const noJobs = document.getElementById('no-jobs');
+    tbody.innerHTML = '';
+
+    updateStats();
+
+    if (jobs.length === 0) { noJobs.style.display = ''; return; }
+    noJobs.style.display = 'none';
+
+    const today = localDateString(new Date());
+    let lastStatus = null;
+
+    for (const job of jobs) {
+      const groupKey = job.status || '';
+      if (!sortCol && lastStatus !== null && groupKey !== lastStatus) {
+        const divTr = document.createElement('tr');
+        divTr.classList.add('group-divider');
+        divTr.innerHTML = '<td colspan="9"></td>';
+        tbody.appendChild(divTr);
+      }
+      lastStatus = groupKey;
+      // ── Main row ──
+      const tr = document.createElement('tr');
+      if (job.status === 'COMPLETE')        tr.classList.add('row-complete');
+      else if (isOverdue(job))              tr.classList.add('row-overdue');
+      else if (job.status === 'SOLD')       tr.classList.add('row-sold');
+      else if (job.status === 'QUOTE SENT') tr.classList.add('row-quote');
+      else if (job.status === 'DESIGNING')  tr.classList.add('row-design');
+      tr.dataset.id = job.job_id;
+
+      const days = daysSince(job.quote_sent_date);
+      const daysHtml = (days !== null && job.status !== 'SOLD' && job.status !== 'COMPLETE')
+        ? `<span class="days-ago">${days}d</span>` : '';
+
+      const ewpClass = job.waiting_ewp ? ' waiting-ewp' : '';
+      const trussClass = job.waiting_trusses ? ' waiting-trusses' : '';
+
+      tr.innerHTML = `
+        <td class="hammer-cell">${job.has_isl ? '<button class="hammer-btn" title="Open ISL file">🔨</button>' : ''}</td>
+        <td class="job-id-link${ewpClass}" title="${job.waiting_ewp ? 'Waiting for EWP' : 'Open folder'}">${esc(job.job_id)}</td>
+        <td class="${trussClass}" ${job.waiting_trusses ? 'title="Waiting for Trusses"' : ''}>${esc(job.quote_number)}</td>
+        <td>${esc(job.project_name)}</td>
+        <td>${esc(job.contractor_name)}</td>
+        <td>${esc(job.address)}</td>
+        ${dueDateCell(job)}
+        <td>${esc(job.quote_sent_date)}${daysHtml}</td>
+        <td>${statusBadge(job.status)}</td>
+      `;
+
+      // ── Detail row ──
+      const detailTr = document.createElement('tr');
+      detailTr.classList.add('detail-row');
+      detailTr.innerHTML = `<td colspan="9">${buildDetailPanel(job)}</td>`;
+
+      // Hammer click → open main ISL file
+      if (job.has_isl) {
+        tr.querySelector('.hammer-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          fetch(`/api/jobs/${encodeURIComponent(job.job_id)}/open-isl`, { method: 'POST' });
+        });
+      }
+
+      // Job ID cell click → open folder in Explorer
+      tr.querySelector('.job-id-link').addEventListener('click', (e) => {
+        e.stopPropagation();
+        fetch(`/api/jobs/${encodeURIComponent(job.job_id)}/open`, { method: 'POST' });
+      });
+
+      // Row click → toggle detail panel
+      tr.addEventListener('click', (e) => {
+        if (e.target.closest('.job-id-link') || e.target.closest('.hammer-btn')) return;
+        const isOpen = detailTr.classList.contains('open');
+        document.querySelectorAll('.detail-row.open').forEach(r => r.classList.remove('open'));
+        if (!isOpen) detailTr.classList.add('open');
+      });
+
+      tbody.appendChild(tr);
+      tbody.appendChild(detailTr);
+    }
+  }
+
+  function formatLogTs(iso) {
+    const d = new Date(iso);
+    const mm = String(d.getMonth()+1).padStart(2,'0');
+    const dd = String(d.getDate()).padStart(2,'0');
+    let h = d.getHours(), ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    const min = String(d.getMinutes()).padStart(2,'0');
+    return `${mm}/${dd} ${h}:${min} ${ampm}`;
+  }
+
+  function buildDetailPanel(job) {
+    const fields = [
+      ['CLIENT',      job.client_name],
+      ['PHONE',       job.phone],
+      ['EMAIL',       job.email],
+      ['QUOTE VALUE', job.quote_value ? `$${job.quote_value}` : null],
+      ['REVISION',    job.revision],
+    ].filter(([, v]) => v);
+
+    const gridHtml = fields.map(([label, val]) => `
+      <div class="detail-field">
+        <label>${label}</label>
+        <div class="dv">
+          ${esc(val)}<button class="detail-copy-btn" data-copy="${esc(val)}" title="Copy">&#128203;</button>
+        </div>
+      </div>`).join('');
+
+    const notesHtml = job.notes ? `
+      <div class="detail-notes">
+        <label>NOTES</label>
+        <div class="dv">${esc(job.notes)}</div>
+      </div>` : '';
+
+    const log = Array.isArray(job.activity_log) ? job.activity_log : [];
+    const entriesHtml = log.length
+      ? log.slice().reverse().map((e, ri) => {
+          const idx = log.length - 1 - ri;
+          return `<div class="log-entry">
+            <span class="log-ts">${formatLogTs(e.ts)}</span>
+            <span class="log-text">${esc(e.text)}</span>
+            <button class="log-del" data-job="${esc(job.job_id)}" data-idx="${idx}" title="Delete">&#10005;</button>
+          </div>`;
+        }).join('')
+      : '<div class="log-empty">No activity logged yet</div>';
+
+    const logHtml = `
+      <div class="activity-log">
+        <label>ACTIVITY LOG</label>
+        <div class="log-entries">${entriesHtml}</div>
+        <div class="log-input-row">
+          <input class="log-input" data-job="${esc(job.job_id)}" placeholder="Add a note..." />
+          <button class="log-add-btn" data-job="${esc(job.job_id)}">ADD</button>
+        </div>
+      </div>`;
+
+    if (!fields.length && !job.notes && !log.length) {
+      return `<span class="detail-empty">NO EXTENDED DETAILS — click ✏ to add</span>${logHtml}`;
+    }
+
+    return `<div class="detail-grid">${gridHtml}</div>${notesHtml}${logHtml}`;
+  }
+
+  // Delegated copy handler for detail panels
+  document.getElementById('job-tbody').addEventListener('click', (e) => {
+    const btn = e.target.closest('.detail-copy-btn');
+    if (!btn) return;
+    e.stopPropagation();
+    const val = btn.dataset.copy;
+    if (!val) return;
+    navigator.clipboard.writeText(val).then(() => {
+      btn.classList.add('copied');
+      setTimeout(() => btn.classList.remove('copied'), 1500);
+    });
+  });
+
+  // ── Activity log handlers ──
+  async function addLogEntry(jobId, text) {
+    await fetch(`/api/jobs/${encodeURIComponent(jobId)}/log`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+    });
+    fetchJobs();
+  }
+
+  document.getElementById('job-tbody').addEventListener('click', (e) => {
+    const addBtn = e.target.closest('.log-add-btn');
+    if (addBtn) {
+      e.stopPropagation();
+      const jobId = addBtn.dataset.job;
+      const input = addBtn.parentElement.querySelector('.log-input');
+      const text = input.value.trim();
+      if (text) addLogEntry(jobId, text);
+      return;
+    }
+    const delBtn = e.target.closest('.log-del');
+    if (delBtn) {
+      e.stopPropagation();
+      const jobId = delBtn.dataset.job;
+      const idx = delBtn.dataset.idx;
+      fetch(`/api/jobs/${encodeURIComponent(jobId)}/log/${idx}`, { method: 'DELETE' })
+        .then(() => fetchJobs());
+      return;
+    }
+  });
+
+  document.getElementById('job-tbody').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target.classList.contains('log-input')) {
+      e.stopPropagation();
+      const text = e.target.value.trim();
+      if (text) addLogEntry(e.target.dataset.job, text);
+    }
+  });
+
+  // ── CSV Export ──
+  document.getElementById('export-btn').addEventListener('click', () => {
+    window.location.href = '/api/export';
+  });
+
+  // ── Sort ──
+
+  document.querySelectorAll('thead th[data-col]').forEach(th => {
+    th.addEventListener('click', () => {
+      const col = th.dataset.col;
+      sortDir = sortCol === col ? sortDir * -1 : 1;
+      sortCol = col;
+      document.querySelectorAll('thead th').forEach(t => {
+        t.classList.remove('sorted');
+        const arrow = t.querySelector('.sort-arrow');
+        if (arrow) arrow.textContent = '▼';
+      });
+      th.classList.add('sorted');
+      th.querySelector('.sort-arrow').textContent = sortDir === 1 ? '▲' : '▼';
+      render();
+    });
+  });
+
+  // ── Search ──
+
+  document.getElementById('search').addEventListener('input', e => {
+    searchVal = e.target.value;
+    render();
+  });
+
+  // ── Contractor profiles ──
+
+  let contractors = {};
+
+  async function fetchContractors() {
+    try {
+      const res = await fetch('/api/contractors');
+      contractors = await res.json();
+    } catch {}
+  }
+
+  const cInput = document.getElementById('f-contractor');
+  const cDropdown = document.getElementById('contractor-dropdown');
+  const cPickerPanel = document.getElementById('contact-picker-panel');
+  const cPickerList = document.getElementById('contact-picker-list');
+  let cHighlight = -1;
+
+  function showContractorDropdown() {
+    const val = cInput.value.toLowerCase();
+    const names = Object.keys(contractors).filter(n => n.toLowerCase().includes(val));
+    if (names.length === 0) { cDropdown.classList.remove('open'); return; }
+    cDropdown.innerHTML = names.map(n => {
+      const count = (contractors[n].contacts || []).length;
+      const detail = count > 0 ? `${count} contact${count > 1 ? 's' : ''}` : '';
+      return `<div class="contractor-opt" data-name="${esc(n)}">
+        ${esc(n)}<span class="co-detail">${esc(detail)}</span>
+      </div>`;
+    }).join('');
+    cHighlight = -1;
+    cDropdown.classList.add('open');
+  }
+
+  function renderContactPicker(contractorName, currentPhone, currentEmail) {
+    const entry = contractors[contractorName];
+    const contacts = entry ? (entry.contacts || []) : [];
+    if (contacts.length === 0) { cPickerPanel.classList.remove('open'); return; }
+
+    cPickerList.innerHTML = contacts.map((c, i) => {
+      const isSelected = (currentPhone && c.phone === currentPhone) ||
+                         (!currentPhone && currentEmail && c.email === currentEmail);
+      return `<div class="cp-opt${isSelected ? ' selected' : ''}" data-idx="${i}">
+        <span class="cp-name">${esc(c.client_name || '—')}</span>
+        <span class="cp-phone">${esc(c.phone || '')}</span>
+        <span class="cp-email">${esc(c.email || '')}</span>
+        <button class="cp-del" data-del-idx="${i}" title="Remove contact">&#10005;</button>
+      </div>`;
+    }).join('') +
+    `<div class="cp-opt cp-new" data-idx="-1">+ ADD NEW CONTACT</div>`;
+
+    cPickerPanel.classList.add('open');
+  }
+
+  function selectContractor(name) {
+    cInput.value = name;
+    cDropdown.classList.remove('open');
+    const entry = contractors[name];
+    const contacts = entry ? (entry.contacts || []) : [];
+    if (contacts.length === 1) {
+      pickContact(contacts[0]);
+      renderContactPicker(name, contacts[0].phone, contacts[0].email);
+    } else if (contacts.length > 1) {
+      renderContactPicker(name,
+        document.getElementById('f-phone').value,
+        document.getElementById('f-email').value
+      );
+    } else {
+      cPickerPanel.classList.remove('open');
+    }
+  }
+
+  function pickContact(c) {
+    document.getElementById('f-client').value = c.client_name || '';
+    document.getElementById('f-phone').value  = c.phone || '';
+    document.getElementById('f-email').value  = c.email || '';
+  }
+
+  cPickerList.addEventListener('click', async (e) => {
+    const delBtn = e.target.closest('.cp-del');
+    if (delBtn) {
+      e.stopPropagation();
+      const name = cInput.value;
+      const delIdx = parseInt(delBtn.dataset.delIdx, 10);
+      const entry = contractors[name] || { contacts: [] };
+      const updated = entry.contacts.filter((_, i) => i !== delIdx);
+      await fetch(`/api/contractors/${encodeURIComponent(name)}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contacts: updated }),
+      });
+      await fetchContractors();
+      const phone = document.getElementById('f-phone').value;
+      const email = document.getElementById('f-email').value;
+      renderContactPicker(name, phone, email);
+      return;
+    }
+
+    const opt = e.target.closest('.cp-opt');
+    if (!opt) return;
+    const idx = parseInt(opt.dataset.idx, 10);
+    const name = cInput.value;
+    const contacts = (contractors[name] || {}).contacts || [];
+    if (idx === -1) {
+      document.getElementById('f-client').value = '';
+      document.getElementById('f-phone').value  = '';
+      document.getElementById('f-email').value  = '';
+    } else {
+      pickContact(contacts[idx]);
+    }
+    cPickerList.querySelectorAll('.cp-opt').forEach((o, i) => {
+      o.classList.toggle('selected', i === idx);
+    });
+  });
+
+  cInput.addEventListener('input', () => {
+    showContractorDropdown();
+    cPickerPanel.classList.remove('open');
+  });
+  cInput.addEventListener('focus', showContractorDropdown);
+
+  cInput.addEventListener('keydown', (e) => {
+    const opts = cDropdown.querySelectorAll('.contractor-opt');
+    if (!cDropdown.classList.contains('open') || opts.length === 0) return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      cHighlight = Math.min(cHighlight + 1, opts.length - 1);
+      opts.forEach((o, i) => o.classList.toggle('highlighted', i === cHighlight));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      cHighlight = Math.max(cHighlight - 1, 0);
+      opts.forEach((o, i) => o.classList.toggle('highlighted', i === cHighlight));
+    } else if (e.key === 'Enter' && cHighlight >= 0) {
+      e.preventDefault();
+      selectContractor(opts[cHighlight].dataset.name);
+    } else if (e.key === 'Escape') {
+      cDropdown.classList.remove('open');
+    }
+  });
+
+  cDropdown.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    const opt = e.target.closest('.contractor-opt');
+    if (opt) selectContractor(opt.dataset.name);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.contractor-wrap')) cDropdown.classList.remove('open');
+  });
+
+  // ── Job edit modal ──
+
+  function openEditModal(job) {
+    currentJobId = job.job_id;
+    document.getElementById('dm-title').textContent = job.job_id;
+    document.getElementById('dm-subtitle').textContent = job.project_name || '';
+    document.getElementById('f-status').value           = job.status || '';
+    document.getElementById('f-quote-number').value    = job.quote_number || '';
+    document.getElementById('f-contractor').value      = job.contractor_name || '';
+    document.getElementById('f-address').value         = job.address || '';
+    document.getElementById('f-due-date').value        = job.due_date || '';
+    document.getElementById('f-quote-sent-date').value = job.quote_sent_date || '';
+    document.getElementById('f-client').value          = job.client_name || '';
+    document.getElementById('f-phone').value           = job.phone || '';
+    document.getElementById('f-email').value           = job.email || '';
+    document.getElementById('f-value').value           = job.quote_value || '';
+    document.getElementById('f-notes').value           = job.notes || '';
+    document.getElementById('f-revision').value        = job.revision || '';
+    if (job.contractor_name && contractors[job.contractor_name]) {
+      renderContactPicker(job.contractor_name, job.phone || null, job.email || null);
+    } else {
+      cPickerPanel.classList.remove('open');
+    }
+    document.getElementById('detail-modal').classList.add('open');
+  }
+
+  function closeEditModal() {
+    document.getElementById('detail-modal').classList.remove('open');
+    cPickerPanel.classList.remove('open');
+    currentJobId = null;
+  }
+
+  document.getElementById('mark-sent-today').addEventListener('click', () => {
+    document.getElementById('f-quote-sent-date').value = localDateString(new Date());
+    document.getElementById('f-status').value = 'QUOTE SENT';
+  });
+
+  document.getElementById('mark-sold').addEventListener('click', () => {
+    document.getElementById('f-status').value = 'SOLD';
+  });
+
+  document.getElementById('dm-cancel').addEventListener('click', closeEditModal);
+  document.getElementById('detail-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('detail-modal')) closeEditModal();
+  });
+
+  document.getElementById('dm-save').addEventListener('click', async () => {
+    if (!currentJobId) return;
+    const payload = {
+      status:          document.getElementById('f-status').value || null,
+      quote_number:    document.getElementById('f-quote-number').value || null,
+      contractor_name: document.getElementById('f-contractor').value || null,
+      address:         document.getElementById('f-address').value || null,
+      due_date:        document.getElementById('f-due-date').value || null,
+      quote_sent_date: document.getElementById('f-quote-sent-date').value || null,
+      client_name:     document.getElementById('f-client').value || null,
+      phone:           document.getElementById('f-phone').value || null,
+      email:           document.getElementById('f-email').value || null,
+      quote_value:     document.getElementById('f-value').value || null,
+      notes:           document.getElementById('f-notes').value || null,
+      revision:        document.getElementById('f-revision').value || null,
+    };
+    Object.keys(payload).forEach(k => { if (!payload[k]) delete payload[k]; });
+    await fetch(`/api/jobs/${encodeURIComponent(currentJobId)}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (payload.contractor_name && (payload.client_name || payload.phone || payload.email)) {
+      const contact = {};
+      if (payload.client_name) contact.client_name = payload.client_name;
+      if (payload.phone) contact.phone = payload.phone;
+      if (payload.email) contact.email = payload.email;
+      await fetch(`/api/contractors/${encodeURIComponent(payload.contractor_name)}/contacts`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contact),
+      });
+      fetchContractors();
+    }
+    closeEditModal();
+    fetchJobs();
+  });
+
+  // ── Add new job modal ──
+
+  document.getElementById('new-digits').addEventListener('input', e => {
+    e.target.value = e.target.value.replace(/\D/g, '');
+    const d = e.target.value;
+    document.getElementById('id-preview').textContent = d ? buildJobId(d) : `TW${yearShort()}???`;
+  });
+
+  function nextJobDigits() {
+    const prefix = 'TW' + yearShort();
+    let max = 0;
+    for (const j of allJobs) {
+      if (j.job_id && j.job_id.startsWith(prefix)) {
+        const num = parseInt(j.job_id.slice(4), 10);
+        if (num > max) max = num;
+      }
+    }
+    return String(max + 1).padStart(3, '0').slice(-3);
+  }
+
+  document.getElementById('add-btn').addEventListener('click', () => {
+    const digits = nextJobDigits();
+    document.getElementById('new-digits').value = digits;
+    document.getElementById('id-preview').textContent = buildJobId(digits);
+    document.getElementById('new-name').value = '';
+    document.getElementById('new-due-date').value = twoWeeksFromNow();
+    document.getElementById('add-error').textContent = '';
+    document.getElementById('add-modal').classList.add('open');
+    document.getElementById('new-name').focus();
+  });
+
+  function closeAddModal() { document.getElementById('add-modal').classList.remove('open'); }
+
+  document.getElementById('add-cancel').addEventListener('click', closeAddModal);
+  document.getElementById('add-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('add-modal')) closeAddModal();
+  });
+
+  document.getElementById('add-save').addEventListener('click', async () => {
+    const digits = document.getElementById('new-digits').value.trim();
+    const project_name = document.getElementById('new-name').value.trim();
+    const due_date = document.getElementById('new-due-date').value;
+    const errEl = document.getElementById('add-error');
+
+    if (!digits || !/^\d{1,3}$/.test(digits)) {
+      errEl.textContent = 'Enter 1–3 digits for the job number';
+      return;
+    }
+
+    const job_id = buildJobId(digits);
+    const res = await fetch('/api/jobs', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ job_id, project_name, due_date }),
+    });
+
+    if (res.status === 409) { errEl.textContent = 'A job with that ID already exists.'; return; }
+    if (!res.ok) { const d = await res.json(); errEl.textContent = d.error || 'Failed.'; return; }
+
+    closeAddModal();
+    fetchJobs();
+  });
+
+  // ── Stats bar — sole filter mechanism ──
+  document.querySelectorAll('.stat-item').forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.stat-item').forEach(s => s.classList.remove('stat-active'));
+      el.classList.add('stat-active');
+      activeFilter = el.dataset.filter;
+      render();
+    });
+  });
+
+  // ── Right-click context menu ──
+  const ctxMenu = document.getElementById('ctx-menu');
+  let ctxJobId = null;
+
+  document.getElementById('job-tbody').addEventListener('contextmenu', (e) => {
+    const tr = e.target.closest('tr[data-id]');
+    if (!tr) return;
+    e.preventDefault();
+    ctxJobId = tr.dataset.id;
+    const job = allJobs.find(j => j.job_id === ctxJobId);
+    ctxMenu.querySelectorAll('.ctx-item[data-waiting]').forEach(el => {
+      el.classList.toggle('active', !!(job && job[el.dataset.waiting]));
+    });
+    ctxMenu.style.left = `${e.clientX}px`;
+    ctxMenu.style.top  = `${e.clientY}px`;
+    ctxMenu.classList.add('open');
+  });
+
+  document.addEventListener('click', () => ctxMenu.classList.remove('open'));
+  document.addEventListener('contextmenu', (e) => {
+    if (!e.target.closest('#job-tbody')) ctxMenu.classList.remove('open');
+  });
+
+  ctxMenu.querySelector('.ctx-item[data-action="edit"]').addEventListener('click', () => {
+    if (!ctxJobId) return;
+    const job = allJobs.find(j => j.job_id === ctxJobId);
+    ctxMenu.classList.remove('open');
+    if (job) openEditModal(job);
+  });
+
+  ctxMenu.querySelectorAll('.ctx-item[data-status]').forEach(item => {
+    item.addEventListener('click', async () => {
+      if (!ctxJobId) return;
+      await fetch(`/api/jobs/${encodeURIComponent(ctxJobId)}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: item.dataset.status }),
+      });
+      ctxMenu.classList.remove('open');
+      fetchJobs();
+    });
+  });
+
+  ctxMenu.querySelectorAll('.ctx-item[data-waiting]').forEach(item => {
+    item.addEventListener('click', async () => {
+      if (!ctxJobId) return;
+      const job = allJobs.find(j => j.job_id === ctxJobId);
+      const field = item.dataset.waiting;
+      const newVal = !(job && job[field]);
+      await fetch(`/api/jobs/${encodeURIComponent(ctxJobId)}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ [field]: newVal }),
+      });
+      ctxMenu.classList.remove('open');
+      fetchJobs();
+    });
+  });
+
+  // ── Calendar ──
+
+  let isCalView = false;
+  let calYear  = new Date().getFullYear();
+  let calMonth = new Date().getMonth(); // 0-indexed
+
+  const MONTH_NAMES = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE',
+                       'JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+  const DAY_HEADS   = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+
+  function renderCalendar() {
+    const wrapper = document.getElementById('cal-months');
+    const label   = document.getElementById('cal-month-label');
+    if (!wrapper) return;
+
+    const todayStr = new Date().toISOString().slice(0,10);
+
+    // second month
+    const m2 = calMonth === 11 ? 0  : calMonth + 1;
+    const y2 = calMonth === 11 ? calYear + 1 : calYear;
+
+    // nav label
+    if (y2 === calYear) {
+      label.textContent = `${MONTH_NAMES[calMonth]} · ${MONTH_NAMES[m2]} ${calYear}`;
+    } else {
+      label.textContent = `${MONTH_NAMES[calMonth]} ${calYear} · ${MONTH_NAMES[m2]} ${y2}`;
+    }
+
+    // job lookup: "YYYY-MM-DD" → [jobs]
+    const byDate = {};
+    allJobs.filter(j => (j.status === 'DESIGNING' || j.status === 'IN PROGRESS') && j.due_date)
+           .forEach(j => { (byDate[j.due_date] = byDate[j.due_date] || []).push(j); });
+
+    function monthHTML(yr, mo) {
+      const daysInMonth = new Date(yr, mo + 1, 0).getDate();
+      const mmStr = String(mo + 1).padStart(2, '0');
+
+      // Mon–Fri headers only
+      let h = ['MON','TUE','WED','THU','FRI'].map(d => `<div class="cal-day-head">${d}</div>`).join('');
+
+      let leadingDone = false;
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dow = new Date(yr, mo, d).getDay(); // 0=Sun…6=Sat
+        if (dow === 0 || dow === 6) continue;     // skip weekends
+
+        if (!leadingDone) {
+          // Mon=1→col 0, Tue=2→col 1 … Fri=5→col 4
+          for (let i = 0; i < dow - 1; i++) h += `<div class="cal-day other-month"></div>`;
+          leadingDone = true;
+        }
+
+        const dateStr = `${yr}-${mmStr}-${String(d).padStart(2,'0')}`;
+        const isToday = dateStr === todayStr;
+        const chips = (byDate[dateStr] || []).map(j => {
+          const cls = j.status === 'DESIGNING'
+            ? (dateStr < todayStr ? 'cal-job cj-overdue' : 'cal-job cj-design')
+            : (dateStr < todayStr ? 'cal-job cj-overdue' : 'cal-job cj-ip');
+          const lbl = j.job_id ? `${j.job_id}${j.project_name ? ' – '+j.project_name : ''}` : j.project_name || '(unnamed)';
+          return `<span class="${cls}" data-id="${j.job_id}" title="${j.status}: ${lbl}" draggable="true">${lbl}</span>`;
+        }).join('');
+        h += `<div class="cal-day${isToday ? ' today' : ''}" data-date="${dateStr}"><span class="cal-day-num">${d}</span>${chips}</div>`;
+      }
+      return h;
+    }
+
+    wrapper.innerHTML = `
+      <div class="cal-month-wrap">
+        <div class="cal-month-title">${MONTH_NAMES[calMonth]} ${calYear}</div>
+        <div class="cal-grid" id="cal-grid-0">${monthHTML(calYear, calMonth)}</div>
+      </div>
+      <div class="cal-month-wrap">
+        <div class="cal-month-title">${MONTH_NAMES[m2]} ${y2}</div>
+        <div class="cal-grid" id="cal-grid-1">${monthHTML(y2, m2)}</div>
+      </div>`;
+
+    // shared drag state across both grids
+    let dragId = null;
+
+    wrapper.querySelectorAll('.cal-job').forEach(el => {
+      el.addEventListener('click', e => {
+        e.stopPropagation();
+        const job = allJobs.find(j => j.job_id === el.dataset.id);
+        if (job) openEditModal(job);
+      });
+      el.addEventListener('dragstart', e => {
+        dragId = el.dataset.id;
+        e.dataTransfer.effectAllowed = 'move';
+        el.style.opacity = '0.4';
+      });
+      el.addEventListener('dragend', () => {
+        el.style.opacity = '';
+        dragId = null;
+      });
+    });
+
+    wrapper.querySelectorAll('.cal-day:not(.other-month)').forEach(cell => {
+      cell.addEventListener('dragover', e => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        cell.classList.add('cal-drop-over');
+      });
+      cell.addEventListener('dragleave', () => cell.classList.remove('cal-drop-over'));
+      cell.addEventListener('drop', async e => {
+        e.preventDefault();
+        cell.classList.remove('cal-drop-over');
+        const newDate = cell.dataset.date;
+        if (!dragId || !newDate) return;
+        const job = allJobs.find(j => j.job_id === dragId);
+        if (!job || job.due_date === newDate) return;
+        await fetch(`/api/jobs/${encodeURIComponent(dragId)}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ due_date: newDate })
+        });
+        await fetchJobs();
+      });
+    });
+  }
+
+  function toggleCalView(on) {
+    isCalView = on;
+    const btn   = document.getElementById('cal-btn');
+    const calV  = document.getElementById('cal-view');
+    const search= document.getElementById('search-row');
+    const stats = document.getElementById('stats-bar');
+    const tbl   = document.getElementById('table-wrap');
+    if (on) {
+      btn.classList.add('active');
+      calV.style.display   = 'block';
+      search.style.display = 'none';
+      stats.style.display  = 'none';
+      tbl.style.display    = 'none';
+      renderCalendar();
+    } else {
+      btn.classList.remove('active');
+      calV.style.display   = 'none';
+      search.style.display = '';
+      stats.style.display  = '';
+      tbl.style.display    = '';
+    }
+  }
+
+  document.getElementById('cal-btn').addEventListener('click', () => toggleCalView(!isCalView));
+  document.getElementById('cal-prev').addEventListener('click', () => {
+    calMonth--;
+    if (calMonth < 0) { calMonth = 11; calYear--; }
+    renderCalendar();
+  });
+  document.getElementById('cal-next').addEventListener('click', () => {
+    calMonth++;
+    if (calMonth > 11) { calMonth = 0; calYear++; }
+    renderCalendar();
+  });
+
+  // ── Polling ──
+
+  async function pollChanges() {
+    try {
+      const res = await fetch('/api/changed');
+      const d = await res.json();
+      if (d.changed) fetchJobs();
+    } catch {}
+  }
+
+  // ── Init ──
+
+  (async () => {
+    const res = await fetch('/api/config');
+    const cfg = await res.json();
+    if (!cfg.configured) {
+      showSetup('');
+    } else {
+      hideSetup();
+      fetchJobs();
+      fetchContractors();
+    }
+    setInterval(pollChanges, 5000);
+  })();
+</script>
+</body>
+</html>
